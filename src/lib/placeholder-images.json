@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Luxurious abstract background",
+      "imageUrl": "https://images.unsplash.com/photo-1763289685121-21c4e3f03aff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsdXh1cnklMjBhYnN0cmFjdHxlbnwwfHx8fDE3NzAxMjk0NzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "luxury abstract"
+    },
+    {
+      "id": "model-program",
+      "description": "High fashion model photography",
+      "imageUrl": "https://images.unsplash.com/photo-1613915617430-8ab0fd7c6baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmYXNoaW9uJTIwbW9kZWx8ZW58MHx8fHwxNzcwMTU3MzQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion model"
+    },
+    {
+      "id": "pageant-program",
+      "description": "Pageant queen with crown",
+      "imageUrl": "https://images.unsplash.com/photo-1747330666333-f9e2d1f8e6c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYWdlYW50JTIwY3Jvd258ZW58MHx8fHwxNzcwMTk4OTI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pageant crown"
+    },
+    {
+      "id": "sports-program",
+      "description": "Athlete in action",
+      "imageUrl": "https://images.unsplash.com/photo-1760114852799-159fe9dccfa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhdGhsZXRlJTIwdHJhaW5pbmd8ZW58MHx8fHwxNzcwMTk4OTI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "athlete training"
+    },
+    {
+      "id": "talent-avatar",
+      "description": "Talent profile avatar",
+      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzAxMDgyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    }
+  ]
 }
