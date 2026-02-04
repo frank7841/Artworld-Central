@@ -13,12 +13,19 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { LayoutDashboard, LogOut, User, Menu, X, ShieldCheck } from 'lucide-react';
+import { LayoutDashboard, LogOut, User, Menu, X, ShieldCheck, Users, GraduationCap, Calendar, Briefcase } from 'lucide-react';
 import { useState } from 'react';
 
 export function Navbar() {
   const { user, logout } = useAuthStore();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'Programs', href: '/programs', icon: <Briefcase className="h-4 w-4" /> },
+    { name: 'Community', href: '/community', icon: <Users className="h-4 w-4" /> },
+    { name: 'Academy', href: '/academy', icon: <GraduationCap className="h-4 w-4" /> },
+    { name: 'Events', href: '/events', icon: <Calendar className="h-4 w-4" /> },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -26,16 +33,19 @@ export function Navbar() {
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-headline font-bold text-xl tracking-tight text-primary">
-              ARTWORLD<span className="text-secondary ml-1">CENTRAL</span>
+              ARTWORLD<span className="text-secondary ml-1">INSTITUTE</span>
             </span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <Link href="/programs" className="transition-colors hover:text-primary">Programs</Link>
-            <Link href="/about" className="transition-colors hover:text-primary">Agency</Link>
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-primary flex items-center gap-1.5">
+                {link.name}
+              </Link>
+            ))}
             {user?.role === 'ADMIN' || user?.role === 'SUPER_ADMIN' ? (
               <Link href="/dashboard/admin" className="text-primary font-semibold flex items-center gap-1">
-                <ShieldCheck className="h-4 w-4" /> Admin Console
+                <ShieldCheck className="h-4 w-4" /> Admin
               </Link>
             ) : null}
           </div>
@@ -48,7 +58,7 @@ export function Navbar() {
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
                   <Avatar className="h-10 w-10">
                     <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback className="bg-primary/20 text-primary">{user.name[0].toUpperCase()}</AvatarFallback>
+                    <AvatarFallback className="bg-primary/20 text-primary">{user.name[0]?.toUpperCase()}</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
@@ -57,7 +67,10 @@ export function Navbar() {
                   <div className="flex flex-col space-y-1">
                     <p className="text-sm font-medium leading-none">{user.name}</p>
                     <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
-                    <p className="text-[10px] mt-1 font-bold uppercase tracking-wider text-primary">{user.role}</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-primary">{user.role}</span>
+                      <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-muted text-muted-foreground font-bold">{user.membershipTier} Member</span>
+                    </div>
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
@@ -86,7 +99,7 @@ export function Navbar() {
                 <Link href="/login">Sign In</Link>
               </Button>
               <Button asChild>
-                <Link href="/register">Join Now</Link>
+                <Link href="/register">Join Community</Link>
               </Button>
             </div>
           )}
@@ -103,15 +116,18 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden border-t bg-background p-4 flex flex-col space-y-4 animate-in slide-in-from-top duration-300">
-          <Link href="/programs" className="text-lg font-medium">Programs</Link>
-          <Link href="/about" className="text-lg font-medium">Agency</Link>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="text-lg font-medium" onClick={() => setIsMenuOpen(false)}>
+              {link.name}
+            </Link>
+          ))}
           {!user && (
             <div className="flex flex-col space-y-2 pt-2">
               <Button variant="outline" asChild className="w-full">
                 <Link href="/login">Sign In</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link href="/register">Register</Link>
+                <Link href="/register">Join Community</Link>
               </Button>
             </div>
           )}

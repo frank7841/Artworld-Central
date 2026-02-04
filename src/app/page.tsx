@@ -3,45 +3,38 @@ import { Navbar } from '@/components/navigation/navbar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle2, Star, Users, Briefcase, Trophy, Zap } from 'lucide-react';
+import { CheckCircle2, Star, Users, Briefcase, Trophy, Zap, GraduationCap, Heart } from 'lucide-react';
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
-  const castRealImg = PlaceHolderImages.find(img => img.id === 'model-program');
-  const pageantImg = PlaceHolderImages.find(img => img.id === 'pageant-program');
-  const sportsImg = PlaceHolderImages.find(img => img.id === 'sports-program');
-
-  const programs = [
+  
+  const featuredPrograms = [
     {
-      id: 'castreal',
-      name: 'CastReal Agency',
-      description: 'The premier destination for high-fashion models and multidisciplinary artists.',
-      image: castRealImg?.imageUrl,
-      hint: castRealImg?.imageHint,
-      icon: <Users className="h-6 w-6 text-primary" />,
-      tag: 'Agency'
-    },
-    {
-      id: 'pageant',
+      id: 'pink-ribbon',
       name: 'Miss Pink Ribbon Kenya',
-      description: 'Empowering voices and championing breast cancer awareness through prestige pageantry.',
-      image: pageantImg?.imageUrl,
-      hint: pageantImg?.imageHint,
-      icon: <Trophy className="h-6 w-6 text-primary" />,
-      tag: 'Pageant'
+      tag: 'Advocacy',
+      desc: 'Leadership and breast cancer awareness through prestige pageantry.',
+      icon: <Heart className="h-5 w-5 text-primary" />,
+      img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl
     },
     {
-      id: 'sports',
-      name: 'AWI Sports & Arts',
-      description: 'Nurturing elite athletes and creative talents for the global stage.',
-      image: sportsImg?.imageUrl,
-      hint: sportsImg?.imageHint,
-      icon: <Zap className="h-6 w-6 text-primary" />,
-      tag: 'Academy'
+      id: 'kacdp',
+      name: 'Kenya Arts Dev Program',
+      tag: 'Creative',
+      desc: 'Nurturing the next generation of Kenyan artistic talent.',
+      icon: <Star className="h-5 w-5 text-primary" />,
+      img: PlaceHolderImages.find(i => i.id === 'program-kacdp')?.imageUrl
+    },
+    {
+      id: 'nifa',
+      name: 'Nairobi Int. Festival',
+      tag: 'Festival',
+      desc: 'A global stage for cultural exchange and creative expression.',
+      icon: <Zap className="h-5 w-5 text-primary" />,
+      img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl
     }
   ];
 
@@ -50,215 +43,183 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center overflow-hidden">
         <Image 
           src={heroImg?.imageUrl || ''} 
-          alt="ArtWorld Central" 
+          alt="ArtWorld Institute" 
           fill 
-          className="object-cover brightness-[0.4]"
+          className="object-cover brightness-[0.3]"
           priority
           data-ai-hint={heroImg?.imageHint}
         />
         <div className="container mx-auto px-4 relative z-10 text-white">
-          <div className="max-w-3xl space-y-6">
+          <div className="max-w-4xl space-y-8">
             <Badge variant="outline" className="text-primary border-primary border-2 px-4 py-1 font-bold text-sm bg-primary/10">
-              AWI × CASTREAL DIGITAL ECOSYSTEM
+              KENYA'S HUB FOR CREATIVE & SOCIAL IMPACT
             </Badge>
-            <h1 className="font-headline text-5xl md:text-7xl font-bold leading-tight">
-              Elevate Your <span className="text-primary">Talent</span> To The World Stage.
+            <h1 className="font-headline text-5xl md:text-8xl font-bold leading-tight">
+              Unlocking <span className="text-primary italic">Kenyan</span> Talent.
             </h1>
-            <p className="text-lg md:text-xl text-ivory/80 font-light max-w-xl">
-              ArtWorld Central is the integrated hub for registration, talent management, and career development across our prestigious networks.
+            <p className="text-xl md:text-2xl text-ivory/80 font-light max-w-2xl leading-relaxed">
+              AWI is a centralized ecosystem fostering community, learning, and professional opportunities for the creative youth of East Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="h-14 px-10 text-lg font-bold" asChild>
-                <Link href="/register">Apply Now</Link>
+              <Button size="lg" className="h-16 px-10 text-lg font-bold" asChild>
+                <Link href="/register">Join the Community</Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-14 px-10 text-lg font-bold bg-white/5 border-white/20 hover:bg-white/10" asChild>
-                <Link href="/programs">Explore Programs</Link>
+              <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold bg-white/5 border-white/20 hover:bg-white/10" asChild>
+                <Link href="/programs">Our Programs</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats/Proof */}
-      <section className="bg-secondary py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-ivory">
-            <div>
-              <div className="text-4xl font-headline font-bold text-primary mb-1">500+</div>
-              <div className="text-sm uppercase tracking-widest font-medium opacity-70">Active Talent</div>
-            </div>
-            <div>
-              <div className="text-4xl font-headline font-bold text-primary mb-1">12</div>
-              <div className="text-sm uppercase tracking-widest font-medium opacity-70">Global Programs</div>
-            </div>
-            <div>
-              <div className="text-4xl font-headline font-bold text-primary mb-1">$2.4M</div>
-              <div className="text-sm uppercase tracking-widest font-medium opacity-70">Payouts Tracked</div>
-            </div>
-            <div>
-              <div className="text-4xl font-headline font-bold text-primary mb-1">98%</div>
-              <div className="text-sm uppercase tracking-widest font-medium opacity-70">Success Rate</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Grid */}
-      <section className="py-24 container mx-auto px-4">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold">Prestigious Pathways</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Select your program and begin your journey into the ArtWorld ecosystem. Our platform ensures a seamless transition from applicant to elite talent.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {programs.map((program) => (
-            <Card key={program.id} className="overflow-hidden group hover:shadow-2xl transition-all border-none shadow-lg">
-              <div className="relative h-96 overflow-hidden">
-                <Image 
-                  src={program.image || ''} 
-                  alt={program.name} 
-                  fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  data-ai-hint={program.hint}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <Badge className="absolute top-4 right-4 bg-primary text-secondary font-bold">
-                  {program.tag}
-                </Badge>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-white/20 backdrop-blur-md p-2 rounded-lg">
-                      {program.icon}
-                    </div>
-                    <h3 className="text-2xl font-headline font-bold text-white">{program.name}</h3>
-                  </div>
-                </div>
-              </div>
-              <CardHeader>
-                <CardDescription className="text-base leading-relaxed">
-                  {program.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="secondary" className="w-full font-bold group" asChild>
-                  <Link href={`/registration/${program.id}`}>
-                    Register Interest
-                    <Zap className="ml-2 h-4 w-4 fill-primary text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Features List */}
-      <section className="py-24 bg-primary/5">
+      {/* Mission Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h2 className="text-4xl font-headline font-bold leading-tight">
-              A Unified Operations Center <br /> For <span className="text-primary italic">Excellence.</span>
-            </h2>
-            <div className="space-y-6">
-              {[
-                { title: 'Secure Identity', desc: 'Enterprise-grade authentication with role-based access for talent, admins, and partners.' },
-                { title: 'Payment Transparency', desc: 'Integrated M-Pesa and card processing with real-time receipt generation and tracking.' },
-                { title: 'Dynamic Registration', desc: 'Intelligent forms tailored to your specific program, ensuring only relevant data is collected.' },
-                { title: 'AI Visibility Boost', desc: 'Built-in AI content assistant to help you craft the perfect professional profile.' }
-              ].map((item, idx) => (
-                <div key={idx} className="flex gap-4">
-                  <div className="mt-1">
-                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative aspect-square">
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-            <Card className="relative z-10 h-full border-none shadow-2xl bg-white overflow-hidden p-8">
-              <div className="space-y-6">
-                <div className="flex items-center justify-between border-b pb-4">
-                  <span className="font-bold">Recent Application</span>
-                  <Badge variant="outline" className="text-green-600 bg-green-50 border-green-200">Verified</Badge>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Avatar className="h-16 w-16">
-                    <AvatarImage src="https://picsum.photos/seed/sample/100" />
-                  </Avatar>
-                  <div>
-                    <div className="font-headline font-bold text-xl">Sarah Mitchell</div>
-                    <div className="text-sm text-muted-foreground">High Fashion Model • CastReal</div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-3 bg-muted rounded-lg">
-                    <div className="text-xs uppercase opacity-60">Status</div>
-                    <div className="font-bold">Shortlisted</div>
-                  </div>
-                  <div className="p-3 bg-muted rounded-lg">
-                    <div className="text-xs uppercase opacity-60">Next Event</div>
-                    <div className="font-bold">Photoshoot</div>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm font-medium">
-                    <span>Portfolio Progress</span>
-                    <span>85%</span>
-                  </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div className="h-full bg-primary w-[85%]" />
-                  </div>
-                </div>
-                <Button className="w-full">View Talent Profile</Button>
+          <div className="space-y-6">
+            <h2 className="text-4xl font-headline font-bold">Our Integrated Ecosystem</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              ArtWorld Institute (AWI) unifies cultural heritage, modern creativity, and social advocacy. We provide a mobile-first space for members to connect, learn, and grow through diverse programs spanning film, fashion, literature, and leadership.
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                <Users className="h-8 w-8 text-primary mb-2" />
+                <h4 className="font-bold">Community</h4>
+                <p className="text-sm text-muted-foreground">Network with peers and mentors across programs.</p>
               </div>
-            </Card>
+              <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                <GraduationCap className="h-8 w-8 text-primary mb-2" />
+                <h4 className="font-bold">Learning</h4>
+                <p className="text-sm text-muted-foreground">Access recorded sessions and certifications.</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <Image 
+              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+              alt="AWI Community"
+              fill
+              className="object-cover"
+              data-ai-hint="community learning"
+            />
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-secondary text-white text-center">
-        <div className="container mx-auto px-4 max-w-3xl space-y-8">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold">Ready to Step Into the Spotlight?</h2>
-          <p className="text-xl text-ivory/70 font-light">
-            Whether you're a model, athlete, or creative visionary, your journey starts with a single step. Join the ecosystem today.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="h-14 px-12 text-lg font-bold" asChild>
-              <Link href="/register">Get Started</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-14 px-12 text-lg font-bold" asChild>
-              <Link href="/login">Portal Login</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-white border-t py-12">
+      {/* Programs Preview */}
+      <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="font-headline font-bold text-2xl tracking-tight text-primary">
-              ARTWORLD<span className="text-secondary ml-1">CENTRAL</span>
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+            <div className="space-y-4">
+              <h2 className="text-4xl font-headline font-bold">Diverse Programs</h2>
+              <p className="text-muted-foreground max-w-xl">From high fashion to social leadership, discover the pathway that fits your vision.</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-muted-foreground">
-              <Link href="#" className="hover:text-primary">Terms</Link>
-              <Link href="#" className="hover:text-primary">Privacy</Link>
-              <Link href="#" className="hover:text-primary">Contract</Link>
-              <Link href="#" className="hover:text-primary">Contact</Link>
+            <Button variant="outline" className="font-bold" asChild>
+              <Link href="/programs">View All 8 Programs</Link>
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredPrograms.map((program) => (
+              <Card key={program.id} className="overflow-hidden group hover:shadow-xl transition-all border-none">
+                <div className="relative h-64 overflow-hidden">
+                  <Image 
+                    src={program.img || ''} 
+                    alt={program.name} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <Badge className="absolute top-4 right-4 bg-primary text-secondary font-bold">
+                    {program.tag}
+                  </Badge>
+                  <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
+                    {program.icon}
+                    <h3 className="font-headline font-bold text-xl">{program.name}</h3>
+                  </div>
+                </div>
+                <CardContent className="p-6 pt-4">
+                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                    {program.desc}
+                  </p>
+                  <Button variant="secondary" className="w-full font-bold group" asChild>
+                    <Link href={`/programs/${program.id}`}>
+                      Explore Program
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact & Call to Action */}
+      <section className="py-24 bg-secondary text-white text-center">
+        <div className="container mx-auto px-4 max-w-3xl space-y-10">
+          <h2 className="text-5xl font-headline font-bold">Join the Movement</h2>
+          <p className="text-xl text-ivory/70 font-light">
+            Become a part of Kenya's most dynamic creative ecosystem. Whether you are an aspiring artist, a leader, or a community builder, AWI is your home.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 py-8">
+            <div>
+              <div className="text-4xl font-headline font-bold text-primary">5k+</div>
+              <div className="text-sm uppercase tracking-widest font-medium opacity-60">Members</div>
             </div>
-            <div className="text-sm text-muted-foreground">
-              © 2024 ArtWorld Institute × CastReal Agency.
+            <div>
+              <div className="text-4xl font-headline font-bold text-primary">200+</div>
+              <div className="text-sm uppercase tracking-widest font-medium opacity-60">Workshops</div>
             </div>
+            <div>
+              <div className="text-4xl font-headline font-bold text-primary">15+</div>
+              <div className="text-sm uppercase tracking-widest font-medium opacity-60">Annual Events</div>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="lg" className="h-16 px-12 text-lg font-bold" asChild>
+              <Link href="/register">Start Free Membership</Link>
+            </Button>
+            <Button size="lg" variant="outline" className="h-16 px-12 text-lg font-bold text-white border-white/20" asChild>
+              <Link href="/community">Visit Community Hub</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-white border-t py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-12">
+            <div className="col-span-2 space-y-6">
+              <div className="font-headline font-bold text-2xl tracking-tight text-primary">
+                ARTWORLD<span className="text-secondary ml-1">INSTITUTE</span>
+              </div>
+              <p className="text-muted-foreground max-w-sm">
+                Empowering Kenyan youth through integrated community, learning, and advocacy since 2012.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Ecosystem</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="/programs">Programs</Link></li>
+                <li><Link href="/community">Community Hub</Link></li>
+                <li><Link href="/academy">Learning Academy</Link></li>
+                <li><Link href="/events">Events Calendar</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold mb-4">Connect</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><Link href="#">Instagram</Link></li>
+                <li><Link href="#">Twitter</Link></li>
+                <li><Link href="#">LinkedIn</Link></li>
+                <li><Link href="#">WhatsApp Support</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t mt-16 pt-8 text-center text-sm text-muted-foreground">
+            © 2024 ArtWorld Institute. All rights reserved. Registered in Kenya.
           </div>
         </div>
       </footer>

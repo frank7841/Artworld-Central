@@ -7,28 +7,28 @@
       "imageHint": "luxury abstract"
     },
     {
-      "id": "model-program",
-      "description": "High fashion model photography",
-      "imageUrl": "https://images.unsplash.com/photo-1613915617430-8ab0fd7c6baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmYXNoaW9uJTIwbW9kZWx8ZW58MHx8fHwxNzcwMTU3MzQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fashion model"
+      "id": "program-pink-ribbon",
+      "description": "Advocacy and leadership",
+      "imageUrl": "https://images.unsplash.com/photo-1576766125468-a5d48274c5b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhZHZvY2FjeXxlbnwwfHx8fDE3NzAxMjk0NzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "advocacy leadership"
     },
     {
-      "id": "pageant-program",
-      "description": "Pageant queen with crown",
-      "imageUrl": "https://images.unsplash.com/photo-1747330666333-f9e2d1f8e6c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYWdlYW50JTIwY3Jvd258ZW58MHx8fHwxNzcwMTk4OTI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pageant crown"
+      "id": "program-kacdp",
+      "description": "Creative development",
+      "imageUrl": "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhcnQlMjBjcmVhdGl2ZXxlbnwwfHx8fDE3NzAxMjk0NzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art creative"
     },
     {
-      "id": "sports-program",
-      "description": "Athlete in action",
-      "imageUrl": "https://images.unsplash.com/photo-1760114852799-159fe9dccfa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhdGhsZXRlJTIwdHJhaW5pbmd8ZW58MHx8fHwxNzcwMTk4OTI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "athlete training"
+      "id": "program-nifa",
+      "description": "Festival of arts",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcnRzJTIwZmVzdGl2YWx8ZW58MHx8fHwxNzcwMTI5NDc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "arts festival"
     },
     {
-      "id": "talent-avatar",
-      "description": "Talent profile avatar",
-      "imageUrl": "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzAxMDgyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "professional portrait"
+      "id": "program-fashion",
+      "description": "Fashion runway",
+      "imageUrl": "https://images.unsplash.com/photo-1509631179647-0177331693ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwcnVud2F5fGVufDB8fHx8MTc3MDEyOTQ3NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion runway"
     }
   ]
 }
