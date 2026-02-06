@@ -27,20 +27,20 @@ export default function ResearchPage() {
     ];
 
     return (
-        <div className="py-24">
+        <div className="py-12 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto space-y-16">
-                    <div className="text-center space-y-4">
+                    <div className="text-center space-y-4 px-4 md:px-0">
                         <Badge variant="outline" className="text-primary border-primary px-4 py-1">Intellectual Hub</Badge>
-                        <h1 className="text-5xl md:text-7xl font-headline font-bold">Research, Writing & Publications</h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h1 className="text-4xl md:text-7xl font-headline font-bold leading-tight">Research, Writing & Publications</h1>
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                             Contributing to cultural scholarship and artistic discourse through rigorous research and creative writing.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                         {sections.map((item, index) => (
-                            <div key={index} className="flex gap-6 p-8 rounded-3xl bg-white shadow-sm border border-muted/20 hover:shadow-md transition-shadow">
+                            <div key={index} className="flex flex-col sm:flex-row gap-4 md:gap-6 p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white shadow-sm border border-muted/20 hover:shadow-md transition-shadow">
                                 <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center shrink-0">
                                     {item.icon}
                                 </div>
@@ -52,16 +52,16 @@ export default function ResearchPage() {
                         ))}
                     </div>
 
-                    <div className="p-12 rounded-[40px] bg-secondary text-white">
-                        <h2 className="text-3xl font-headline font-bold mb-6 italic text-center">Recent Publications</h2>
+                    <div className="p-8 md:p-12 rounded-3xl md:rounded-[40px] bg-secondary text-white">
+                        <h2 className="text-2xl md:text-3xl font-headline font-bold mb-6 italic text-center">Recent Publications</h2>
                         <div className="space-y-4">
                             {[
                                 "The Future of Kenyan Digital Art (2026)",
                                 "Documenting Heritage: A Guide for Young Artists",
                                 "Art as a Tool for Climate Advocacy: Case Studies from East Africa"
                             ].map((pub, i) => (
-                                <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                                    <span className="font-medium">{pub}</span>
+                                <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors gap-4">
+                                    <span className="font-medium text-sm md:text-base">{pub}</span>
                                     <Badge className="bg-primary text-secondary">PDF</Badge>
                                 </div>
                             ))}

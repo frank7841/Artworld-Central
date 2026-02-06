@@ -29,18 +29,18 @@ export default function ArtsEducationPage() {
     ];
 
     return (
-        <div className="py-24">
+        <div className="py-12 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto space-y-16">
-                    <div className="text-center space-y-4">
+                    <div className="text-center space-y-4 px-4 md:px-0">
                         <Badge variant="outline" className="text-primary border-primary px-4 py-1">Programs</Badge>
-                        <h1 className="text-5xl md:text-7xl font-headline font-bold">Arts Education & Training</h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h1 className="text-4xl md:text-7xl font-headline font-bold leading-tight">Arts Education & Training</h1>
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                             Cultivating creative talent through progressive education in visual, performing, and literary arts.
                         </p>
                     </div>
 
-                    <div className="relative aspect-video rounded-[40px] overflow-hidden shadow-2xl">
+                    <div className="relative aspect-video rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl">
                         <Image
                             src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200"
                             alt="Arts Education"
@@ -49,9 +49,9 @@ export default function ArtsEducationPage() {
                         />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                         {offerings.map((item, index) => (
-                            <div key={index} className="p-8 rounded-3xl bg-white border border-muted/20 hover:border-primary/20 hover:shadow-lg transition-all">
+                            <div key={index} className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-muted/20 hover:border-primary/20 hover:shadow-lg transition-all">
                                 <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
                                     {item.icon}
                                 </div>
@@ -61,7 +61,7 @@ export default function ArtsEducationPage() {
                         ))}
                     </div>
 
-                    <div className="bg-primary p-12 rounded-[40px] text-white flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div className="bg-primary p-8 md:p-12 rounded-3xl md:rounded-[40px] text-white flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 text-center lg:text-left">
                         <div className="space-y-4">
                             <h2 className="text-3xl font-headline font-bold italic">Ready to start your journey?</h2>
                             <p className="opacity-80">Join our upcoming intake and unlock your creative potential.</p>

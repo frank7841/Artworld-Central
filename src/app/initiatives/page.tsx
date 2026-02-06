@@ -58,13 +58,13 @@ export default function InitiativesPage() {
     ];
 
     return (
-        <div className="py-24">
+        <div className="py-12 md:py-24">
             <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto space-y-16">
-                    <div className="text-center space-y-4 max-w-3xl mx-auto">
+                    <div className="text-center space-y-4 max-w-3xl mx-auto px-4 md:px-0">
                         <Badge variant="outline" className="text-primary border-primary px-4 py-1">Our Focus</Badge>
-                        <h1 className="text-5xl md:text-7xl font-headline font-bold">Flagship Initiatives</h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h1 className="text-4xl md:text-7xl font-headline font-bold leading-tight">Flagship Initiatives</h1>
+                        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                             Targeted programs designed to create lasting social impact, celebrate excellence, and empower the next generation of creative leaders.
                         </p>
                     </div>
@@ -72,9 +72,9 @@ export default function InitiativesPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {initiatives.map((item) => (
                             <Link key={item.id} href={item.href}>
-                                <Card className={`h-full border-none shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group rounded-[32px] ${item.color}`}>
-                                    <CardContent className="p-10 space-y-6">
-                                        <div className="w-16 h-16 rounded-2xl bg-white shadow-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <Card className={`h-full border-none shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group rounded-2xl md:rounded-[32px] ${item.color}`}>
+                                    <CardContent className="p-6 md:p-10 space-y-4 md:space-y-6">
+                                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white shadow-md flex items-center justify-center group-hover:scale-110 transition-transform">
                                             {item.icon}
                                         </div>
                                         <div className="space-y-3">
