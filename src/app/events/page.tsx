@@ -1,6 +1,5 @@
 'use client';
 
-import { Navbar } from '@/components/navigation/navbar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -50,7 +49,7 @@ const events = [
 export default function EventsPage() {
     return (
         <div className="min-h-screen bg-muted/10">
-            <Navbar />
+
 
             {/* Hero Section */}
             <section className="bg-primary text-white py-16">

@@ -192,7 +192,7 @@ export default function Home() {
             <Button size="lg" className="h-16 px-12 text-lg font-bold" asChild>
               <Link href="/registration">Start Free Membership</Link>
             </Button>
-            <Button size="lg" variant="outline" className="h-16 px-12 text-lg font-bold text-white border-white/20" asChild>
+            <Button size="lg" variant="outline" className="h-16 px-12 text-lg font-bold hover:text-white text-primary border-white/20" asChild>
               <Link href="/community">Visit Community Hub</Link>
             </Button>
           </div>

@@ -1,6 +1,4 @@
 
-import { Navbar } from '@/components/navigation/navbar';
-import { Footer } from '@/components/navigation/footer';
 import { Badge } from '@/components/ui/badge';
 import { Book, FileText, Camera, Video, Newspaper, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -37,7 +35,6 @@ export default function MediaPage() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-grow py-24">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto space-y-24">
@@ -123,7 +120,6 @@ export default function MediaPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

@@ -1,6 +1,4 @@
 
-import { Navbar } from '@/components/navigation/navbar';
-import { Footer } from '@/components/navigation/footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,7 +8,6 @@ import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Send } from 'lucide-
 export default function ContactPage() {
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-grow py-24">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto space-y-24">
@@ -119,7 +116,6 @@ export default function ContactPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

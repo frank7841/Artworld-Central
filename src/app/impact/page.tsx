@@ -1,6 +1,4 @@
 
-import { Navbar } from '@/components/navigation/navbar';
-import { Footer } from '@/components/navigation/footer';
 import { Badge } from '@/components/ui/badge';
 import { Users, Leaf, Heart, Globe, Quote, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
@@ -34,7 +32,6 @@ export default function ImpactPage() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-grow py-12 md:py-24">
                 <div className="container mx-auto px-4">
                     <div className="max-w-5xl mx-auto space-y-24">
@@ -111,7 +108,6 @@ export default function ImpactPage() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }
