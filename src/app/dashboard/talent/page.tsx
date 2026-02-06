@@ -9,13 +9,13 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { AIProfileEnhancer } from '@/components/talent/ai-profile-enhancer';
-import { 
-  User, 
-  Image as ImageIcon, 
-  Calendar, 
-  FileText, 
-  Star, 
-  Settings, 
+import {
+  User,
+  Image as ImageIcon,
+  Calendar,
+  FileText,
+  Star,
+  Settings,
   Briefcase,
   AlertCircle
 } from 'lucide-react';
@@ -38,7 +38,7 @@ export default function TalentDashboard() {
   return (
     <div className="min-h-screen bg-muted/20 pb-20">
       <Navbar />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Header Summary */}
         <div className="flex flex-col md:flex-row gap-8 items-start mb-8">
@@ -51,7 +51,7 @@ export default function TalentDashboard() {
               <ImageIcon className="h-4 w-4" />
             </Button>
           </div>
-          
+
           <div className="flex-1 space-y-2">
             <div className="flex flex-col md:flex-row md:items-center gap-3">
               <h1 className="text-3xl font-headline font-bold">{user.name}</h1>
@@ -60,7 +60,7 @@ export default function TalentDashboard() {
             <p className="text-muted-foreground max-w-2xl">{bio}</p>
             <div className="flex gap-4 pt-2">
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" /> Joined Oct 2024
+                <Calendar className="h-4 w-4" /> Joined Oct 2026
               </div>
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
                 <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" /> Professional Level
@@ -130,7 +130,7 @@ export default function TalentDashboard() {
                     </div>
                     <div>
                       <div className="font-bold">Subscription Paid</div>
-                      <div className="text-sm text-muted-foreground">Valid until Dec 2024</div>
+                      <div className="text-sm text-muted-foreground">Valid until Dec 2026</div>
                     </div>
                   </div>
                 </CardContent>
@@ -198,32 +198,32 @@ export default function TalentDashboard() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-8">
-                <AIProfileEnhancer 
-                  initialText={bio} 
+                <AIProfileEnhancer
+                  initialText={bio}
                   onApply={(newText) => {
                     setBio(newText);
-                  }} 
+                  }}
                 />
               </CardContent>
             </Card>
           </TabsContent>
-          
+
           <TabsContent value="portfolio">
-             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4, 5, 6].map(i => (
-                  <div key={i} className="aspect-[3/4] relative group rounded-xl overflow-hidden shadow-md">
-                    <img src={`https://picsum.photos/seed/portfolio-${i}/600/800`} className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                      <Button size="sm" variant="secondary">View</Button>
-                      <Button size="sm" variant="destructive">Remove</Button>
-                    </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[1, 2, 3, 4, 5, 6].map(i => (
+                <div key={i} className="aspect-[3/4] relative group rounded-xl overflow-hidden shadow-md">
+                  <img src={`https://picsum.photos/seed/portfolio-${i}/600/800`} className="object-cover w-full h-full group-hover:scale-105 transition-transform" />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                    <Button size="sm" variant="secondary">View</Button>
+                    <Button size="sm" variant="destructive">Remove</Button>
                   </div>
-                ))}
-                <button className="aspect-[3/4] border-2 border-dashed rounded-xl flex flex-col items-center justify-center gap-2 text-muted-foreground hover:bg-white hover:text-primary hover:border-primary transition-all">
-                  <ImageIcon className="h-8 w-8" />
-                  <span className="font-bold">Add Photo</span>
-                </button>
-             </div>
+                </div>
+              ))}
+              <button className="aspect-[3/4] border-2 border-dashed rounded-xl flex flex-col items-center justify-center gap-2 text-muted-foreground hover:bg-white hover:text-primary hover:border-primary transition-all">
+                <ImageIcon className="h-8 w-8" />
+                <span className="font-bold">Add Photo</span>
+              </button>
+            </div>
           </TabsContent>
         </Tabs>
       </div>

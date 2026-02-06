@@ -36,7 +36,7 @@ export default function CommunityPage() {
       id: 3,
       author: 'AWI Admin',
       role: 'Official',
-      content: 'Grant applications for the KACDP 2024 cycle are now open. Apply through your dashboard. Make sure to review the updated guidelines for documentation.',
+      content: 'Grant applications for the KACDP 2026 cycle are now open. Apply through your dashboard. Make sure to review the updated guidelines for documentation.',
       time: '1d ago',
       likes: 156,
       comments: 45,
@@ -199,7 +199,7 @@ export default function CommunityPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {[
-                  { tag: '#KACDP2024', count: '1.2k posts', color: 'bg-secondary' },
+                  { tag: '#KACDP2026', count: '1.2k posts', color: 'bg-secondary' },
                   { tag: '#PinkRibbonKenya', count: '850 posts', color: 'bg-white' },
                   { tag: '#NairobiArts', count: '540 posts', color: 'bg-secondary' },
                 ].map((item) => (

@@ -259,7 +259,7 @@ export default function AcademyPage() {
             <Link href="/academy" className="hover:text-primary transition-colors">Academy</Link>
             <Link href="/events" className="hover:text-primary transition-colors">Events</Link>
           </div>
-          <p className="text-muted-foreground text-sm font-medium">© 2024 Artworld Institute. Empowering Africa's Creative Economy.</p>
+          <p className="text-muted-foreground text-sm font-medium">© 2026 Artworld Institute. Empowering Africa's Creative Economy.</p>
         </div>
       </footer>
     </div>

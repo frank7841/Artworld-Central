@@ -1,53 +1,66 @@
 
 import { Navbar } from '@/components/navigation/navbar';
+import { Footer } from '@/components/navigation/footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle2, Star, Users, Briefcase, Trophy, Zap, GraduationCap, Heart } from 'lucide-react';
+import { CheckCircle2, Star, Users, Briefcase, Trophy, Zap, GraduationCap, Heart, Leaf, Book, Film, Mic2 } from 'lucide-react';
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
-  
+
   const featuredPrograms = [
+    {
+      id: 'nifa',
+      name: 'Nairobi Festival of Arts',
+      tag: 'Festival',
+      desc: 'Multidisciplinary cultural festival celebrating visual arts, performance, and music.',
+      icon: <Zap className="h-5 w-5 text-primary" />,
+      img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl,
+      href: '/programs/festivals'
+    },
+    {
+      id: 'kikaoo-awards',
+      name: 'KIKAOO Awards',
+      tag: 'Excellence',
+      desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
+      icon: <Trophy className="h-5 w-5 text-primary" />,
+      img: 'https://images.unsplash.com/photo-1531050171651-61afc2834d75?q=80&w=800',
+      href: '/initiatives/kikaoo-awards'
+    },
+    {
+      id: 'heal-future',
+      name: 'Heal the Future',
+      tag: 'Climate Action',
+      desc: 'Arts-led climate action initiative empowering youth to address environmental challenges.',
+      icon: <Leaf className="h-5 w-5 text-primary" />,
+      img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800',
+      href: '/initiatives/heal-future'
+    },
     {
       id: 'pink-ribbon',
       name: 'Miss Pink Ribbon Kenya',
       tag: 'Advocacy',
-      desc: 'Leadership and breast cancer awareness through prestige pageantry.',
+      desc: 'Promoting breast cancer awareness and women’s health through elegance.',
       icon: <Heart className="h-5 w-5 text-primary" />,
-      img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl
-    },
-    {
-      id: 'kacdp',
-      name: 'Kenya Arts Dev Program',
-      tag: 'Creative',
-      desc: 'Nurturing the next generation of Kenyan artistic talent.',
-      icon: <Star className="h-5 w-5 text-primary" />,
-      img: PlaceHolderImages.find(i => i.id === 'program-kacdp')?.imageUrl
-    },
-    {
-      id: 'nifa',
-      name: 'Nairobi Int. Festival',
-      tag: 'Festival',
-      desc: 'A global stage for cultural exchange and creative expression.',
-      icon: <Zap className="h-5 w-5 text-primary" />,
-      img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl
+      img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl,
+      href: '/initiatives/miss-pink-ribbon'
     }
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center overflow-hidden">
-        <Image 
-          src={heroImg?.imageUrl || ''} 
-          alt="ArtWorld Institute" 
-          fill 
+        <Image
+          src={heroImg?.imageUrl || ''}
+          alt="ArtWorld Institute"
+          fill
           className="object-cover brightness-[0.3]"
           priority
           data-ai-hint={heroImg?.imageHint}
@@ -58,14 +71,14 @@ export default function Home() {
               KENYA'S HUB FOR CREATIVE & SOCIAL IMPACT
             </Badge>
             <h1 className="font-headline text-5xl md:text-8xl font-bold leading-tight">
-              Unlocking <span className="text-primary italic">Kenyan</span> Talent.
+              Where <span className="text-secondary italic">Creativity</span> Connects.
             </h1>
             <p className="text-xl md:text-2xl text-ivory/80 font-light max-w-2xl leading-relaxed">
-              AWI is a centralized ecosystem fostering community, learning, and professional opportunities for the creative youth of East Africa.
+              ArtWorld Institute is a premier arts training and research institution dedicated to nurturing creativity, advancing cultural knowledge, and shaping future artistic leaders.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="h-16 px-10 text-lg font-bold" asChild>
-                <Link href="/register">Join the Community</Link>
+                <Link href="/registration">Join the Community</Link>
               </Button>
               <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold bg-white/5 border-white/20 hover:bg-white/10" asChild>
                 <Link href="/programs">Our Programs</Link>
@@ -97,7 +110,7 @@ export default function Home() {
             </div>
           </div>
           <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
-            <Image 
+            <Image
               src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
               alt="AWI Community"
               fill
@@ -125,10 +138,10 @@ export default function Home() {
             {featuredPrograms.map((program) => (
               <Card key={program.id} className="overflow-hidden group hover:shadow-xl transition-all border-none">
                 <div className="relative h-64 overflow-hidden">
-                  <Image 
-                    src={program.img || ''} 
-                    alt={program.name} 
-                    fill 
+                  <Image
+                    src={program.img || ''}
+                    alt={program.name}
+                    fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -145,7 +158,7 @@ export default function Home() {
                     {program.desc}
                   </p>
                   <Button variant="secondary" className="w-full font-bold group" asChild>
-                    <Link href={`/programs/${program.id}`}>
+                    <Link href={program.href}>
                       Explore Program
                     </Link>
                   </Button>
@@ -179,7 +192,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="h-16 px-12 text-lg font-bold" asChild>
-              <Link href="/register">Start Free Membership</Link>
+              <Link href="/registration">Start Free Membership</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-16 px-12 text-lg font-bold text-white border-white/20" asChild>
               <Link href="/community">Visit Community Hub</Link>
@@ -188,41 +201,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-white border-t py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="col-span-2 space-y-6">
-              <div className="font-headline font-bold text-2xl tracking-tight text-primary">
-                ARTWORLD<span className="text-secondary ml-1">INSTITUTE</span>
-              </div>
-              <p className="text-muted-foreground max-w-sm">
-                Empowering Kenyan youth through integrated community, learning, and advocacy since 2012.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Ecosystem</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/programs">Programs</Link></li>
-                <li><Link href="/community">Community Hub</Link></li>
-                <li><Link href="/academy">Learning Academy</Link></li>
-                <li><Link href="/events">Events Calendar</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="#">Instagram</Link></li>
-                <li><Link href="#">Twitter</Link></li>
-                <li><Link href="#">LinkedIn</Link></li>
-                <li><Link href="#">WhatsApp Support</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-16 pt-8 text-center text-sm text-muted-foreground">
-            © 2024 ArtWorld Institute. All rights reserved. Registered in Kenya.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

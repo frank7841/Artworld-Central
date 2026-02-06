@@ -11,9 +11,9 @@ import Image from 'next/image';
 const events = [
     {
         id: 1,
-        title: "Creative Advocacy Workshops 2024",
+        title: "Creative Advocacy Workshops 2026",
         description: "Learn how to use art for social change and advocacy in this intensive 3-day workshop series.",
-        date: "Feb 15 - Feb 17, 2024",
+        date: "Feb 15 - Feb 17, 2026",
         time: "09:00 AM - 04:00 PM",
         location: "Nairobi Contemporary Art Institute",
         category: "Workshop",
@@ -25,7 +25,7 @@ const events = [
         id: 2,
         title: "Nairobi Creative Circle Mixer",
         description: "Connect with fellow artists, designers, and creatives in Nairobi. Networking and collaboration opportunities.",
-        date: "Feb 22, 2024",
+        date: "Feb 22, 2026",
         time: "06:00 PM - 09:00 PM",
         location: "Artworld Institute Hub",
         category: "Networking",
@@ -37,7 +37,7 @@ const events = [
         id: 3,
         title: "Annual Art Rights Symposium",
         description: "Exploring the legal landscape for African artists. Registration is free for all AWI members.",
-        date: "March 05, 2024",
+        date: "March 05, 2026",
         time: "10:00 AM - 05:00 PM",
         location: "Virtual Event",
         category: "Symposium",
@@ -115,14 +115,14 @@ export default function EventsPage() {
                             </div>
                             <div className="p-8 md:p-12 flex flex-col justify-center">
                                 <Badge className="w-fit mb-4 bg-secondary text-primary font-bold">Exclusive Exhibition</Badge>
-                                <h3 className="text-3xl font-bold mb-4 font-headline">The Future of African Digital Art 2024</h3>
+                                <h3 className="text-3xl font-bold mb-4 font-headline">The Future of African Digital Art 2026</h3>
                                 <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
                                     A groundbreaking showcase of digital art from across the continent, exploring the intersection of traditional forms and emerging technologies.
                                 </p>
                                 <div className="space-y-3 mb-8">
                                     <div className="flex items-center gap-3 text-muted-foreground">
                                         <Calendar className="h-5 w-5 text-primary" />
-                                        <span className="font-medium text-foreground">March 12 - March 20, 2024</span>
+                                        <span className="font-medium text-foreground">March 12 - March 20, 2026</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-muted-foreground">
                                         <MapPin className="h-5 w-5 text-primary" />
@@ -213,7 +213,7 @@ export default function EventsPage() {
                     <span className="font-headline font-bold text-lg tracking-tight text-primary">
                         ARTWORLD<span className="text-secondary ml-1">INSTITUTE</span>
                     </span>
-                    <p className="text-muted-foreground mt-4 text-sm">© 2024 Artworld Institute. Empowering Africa's Creative Economy.</p>
+                    <p className="text-muted-foreground mt-4 text-sm">© 2026 Artworld Institute. Empowering Africa's Creative Economy.</p>
                 </div>
             </footer>
         </div>

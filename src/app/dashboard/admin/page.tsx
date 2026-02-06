@@ -8,12 +8,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Users, 
-  CreditCard, 
-  FileCheck, 
-  PlusCircle, 
-  Search, 
+import {
+  Users,
+  CreditCard,
+  FileCheck,
+  PlusCircle,
+  Search,
   Filter,
   MoreVertical,
   ArrowUpRight,
@@ -23,13 +23,13 @@ import {
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
 } from '@/components/ui/table';
 
 export default function AdminDashboard() {
@@ -45,10 +45,10 @@ export default function AdminDashboard() {
   if (!user) return null;
 
   const applications = [
-    { id: '1', name: 'Alice Walker', program: 'CastReal', status: 'Pending', date: '2024-10-24' },
-    { id: '2', name: 'Bob Smith', program: 'Sports', status: 'Approved', date: '2024-10-23' },
-    { id: '3', name: 'Catherine N.', program: 'Pageant', status: 'Rejected', date: '2024-10-22' },
-    { id: '4', name: 'David M.', program: 'CastReal', status: 'Pending', date: '2024-10-21' },
+    { id: '1', name: 'Alice Walker', program: 'CastReal', status: 'Pending', date: '2026-10-24' },
+    { id: '2', name: 'Bob Smith', program: 'Sports', status: 'Approved', date: '2026-10-23' },
+    { id: '3', name: 'Catherine N.', program: 'Pageant', status: 'Rejected', date: '2026-10-22' },
+    { id: '4', name: 'David M.', program: 'CastReal', status: 'Pending', date: '2026-10-21' },
   ];
 
   const payments = [
@@ -60,7 +60,7 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-muted/20 pb-20">
       <Navbar />
-      
+
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8">
           <div className="space-y-1">
@@ -141,8 +141,8 @@ export default function AdminDashboard() {
                       <TableCell>
                         <Badge className={
                           app.status === 'Approved' ? 'bg-green-100 text-green-700' :
-                          app.status === 'Rejected' ? 'bg-red-100 text-red-700' :
-                          'bg-orange-100 text-orange-700'
+                            app.status === 'Rejected' ? 'bg-red-100 text-red-700' :
+                              'bg-orange-100 text-orange-700'
                         }>
                           {app.status}
                         </Badge>
