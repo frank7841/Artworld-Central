@@ -15,7 +15,7 @@ export default function ImpactPage() {
     const stories = [
         {
             title: "Empowering the Next Generation of Filmmakers",
-            desc: "How the KIKAOO Awards launched the career of three emerging directors from rural Kenya.",
+            desc: "How the KIKAOO AWARDS launched the career of three emerging directors from rural Kenya.",
             tag: "Youth"
         },
         {
@@ -25,7 +25,7 @@ export default function ImpactPage() {
         },
         {
             title: "Women's Health Advocacy through Pageantry",
-            desc: "The ripple effect of Miss Pink Ribbon Kenya on local health screenings.",
+            desc: "The ripple effect of MISS PINK RIBBON Kenya on local health screenings.",
             tag: "Health"
         }
     ];

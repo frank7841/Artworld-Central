@@ -8,19 +8,19 @@ import Link from 'next/link';
 export default function FestivalsPage() {
     const festivals = [
         {
-            title: "Nairobi Festival of Arts (NFA)",
+            title: "Nairobi Festival of Arts NFA",
             desc: "A multidisciplinary cultural festival bringing together visual arts, performance, literature, film, and music.",
             icon: <Zap className="h-6 w-6 text-primary" />,
             tag: "Flagship"
         },
         {
-            title: "KIKAOO Awards",
+            title: "KIKAOO AWARDS",
             desc: "Celebrating excellence in film, storytelling, and creative expression, recognizing outstanding artists and filmmakers.",
             icon: <Trophy className="h-6 w-6 text-primary" />,
             tag: "Recognition"
         },
         {
-            title: "Miss Pink Ribbon Kenya",
+            title: "MISS PINK RIBBON Kenya",
             desc: "A purpose-driven beauty pageant promoting breast cancer awareness and women's health education.",
             icon: <Star className="h-6 w-6 text-primary" />,
             tag: "Advocacy"

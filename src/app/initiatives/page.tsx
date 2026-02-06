@@ -9,7 +9,7 @@ export default function InitiativesPage() {
     const initiatives = [
         {
             id: 'nifa',
-            name: 'Nairobi Festival of Arts',
+            name: 'Nairobi Festival of Arts NFA',
             desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
             icon: <Zap className="h-6 w-6 text-primary" />,
             href: '/initiatives/nifa',
@@ -17,7 +17,7 @@ export default function InitiativesPage() {
         },
         {
             id: 'kikaoo-awards',
-            name: 'KIKAOO Awards',
+            name: 'KIKAOO AWARDS',
             desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
             icon: <Trophy className="h-6 w-6 text-primary" />,
             href: '/initiatives/kikaoo-awards',
@@ -25,7 +25,7 @@ export default function InitiativesPage() {
         },
         {
             id: 'miss-pink-ribbon',
-            name: 'Miss Pink Ribbon Kenya',
+            name: 'MISS PINK RIBBON Kenya',
             desc: 'Promoting breast cancer awareness and women’s health through elegance.',
             icon: <Heart className="h-6 w-6 text-pink-600" />,
             href: '/initiatives/miss-pink-ribbon',
@@ -33,7 +33,7 @@ export default function InitiativesPage() {
         },
         {
             id: 'heal-future',
-            name: 'Heal the Future',
+            name: 'Heal the Future Climate Action Program',
             desc: 'Arts-led climate action initiative empowering youth to address environmental challenges.',
             icon: <Leaf className="h-6 w-6 text-green-600" />,
             href: '/initiatives/heal-future',

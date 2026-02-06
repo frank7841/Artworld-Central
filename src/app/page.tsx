@@ -15,7 +15,7 @@ export default function Home() {
   const featuredPrograms = [
     {
       id: 'nifa',
-      name: 'Nairobi Festival of Arts',
+      name: 'Nairobi Festival of Arts NFA',
       tag: 'Festival',
       desc: 'Multidisciplinary cultural festival celebrating visual arts, performance, and music.',
       icon: <Zap className="h-5 w-5 text-primary" />,
@@ -24,7 +24,7 @@ export default function Home() {
     },
     {
       id: 'kikaoo-awards',
-      name: 'KIKAOO Awards',
+      name: 'KIKAOO AWARDS',
       tag: 'Excellence',
       desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
       icon: <Trophy className="h-5 w-5 text-primary" />,
@@ -33,7 +33,7 @@ export default function Home() {
     },
     {
       id: 'heal-future',
-      name: 'Heal the Future',
+      name: 'Heal the Future Climate Action Program',
       tag: 'Climate Action',
       desc: 'Arts-led climate action initiative empowering youth to address environmental challenges.',
       icon: <Leaf className="h-5 w-5 text-primary" />,
@@ -42,7 +42,7 @@ export default function Home() {
     },
     {
       id: 'pink-ribbon',
-      name: 'Miss Pink Ribbon Kenya',
+      name: 'MISS PINK RIBBON Kenya',
       tag: 'Advocacy',
       desc: 'Promoting breast cancer awareness and women’s health through elegance.',
       icon: <Heart className="h-5 w-5 text-primary" />,

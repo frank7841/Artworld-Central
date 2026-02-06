@@ -9,13 +9,13 @@ import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, 
 import { ExploreMore } from '@/components/layout/ExploreMore';
 
 const allPrograms = [
-  { id: 'pink-ribbon', name: 'Miss Pink Ribbon Kenya', tag: 'Advocacy', icon: <Heart /> },
-  { id: 'kacdp', name: 'Kenya Arts Dev Program', tag: 'Creative', icon: <Palette /> },
-  { id: 'nifa', name: 'Nairobi Int. Festival', tag: 'Arts', icon: <Zap /> },
-  { id: 'kikaoo', name: 'KIKAOO Awards', tag: 'Media', icon: <Film /> },
-  { id: 'pop-life', name: 'Nairobi Pop Life', tag: 'Culture', icon: <Star /> },
-  { id: 'book-week', name: 'National Book Week', tag: 'Literature', icon: <Book /> },
-  { id: 'transport-awards', name: 'National Transport Awards', tag: 'Community', icon: <Truck /> },
+  { id: 'pink-ribbon', name: 'MISS PINK RIBBON Kenya', tag: 'Advocacy', icon: <Heart /> },
+  { id: 'kacdp', name: 'KACDP', tag: 'Creative', icon: <Palette /> },
+  { id: 'nifa', name: 'Nairobi Festival of Arts NFA', tag: 'Arts', icon: <Zap /> },
+  { id: 'kikaoo', name: 'KIKAOO AWARDS', tag: 'Media', icon: <Film /> },
+  { id: 'pop-life', name: 'NAIROBI POP LIFE', tag: 'Culture', icon: <Star /> },
+  { id: 'book-week', name: 'KIKAOO NATIONAL BOOK WEEK', tag: 'Literature', icon: <Book /> },
+  { id: 'transport-awards', name: 'Kenya NATIONAL TRANSPORT and Safety AWARDS', tag: 'Community', icon: <Truck /> },
   { id: 'fashion-runway', name: 'AWI Fashion Runway', tag: 'Fashion', icon: <Briefcase /> },
 ];
 
@@ -55,7 +55,7 @@ export default function ProgramsPage() {
         items={[
           {
             id: 'nifa',
-            name: 'Nairobi Festival of Arts',
+            name: 'Nairobi Festival of Arts NFA',
             desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
             icon: <Zap className="h-6 w-6 text-primary" />,
             href: '/initiatives/nifa',
@@ -63,7 +63,7 @@ export default function ProgramsPage() {
           },
           {
             id: 'kikaoo-awards',
-            name: 'KIKAOO Awards',
+            name: 'KIKAOO AWARDS',
             desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
             icon: <Trophy className="h-6 w-6 text-primary" />,
             href: '/initiatives/kikaoo-awards',
@@ -71,8 +71,8 @@ export default function ProgramsPage() {
           },
           {
             id: 'miss-pink-ribbon',
-            name: 'Miss Pink Ribbon Kenya',
-            desc: 'Promoting breast cancer awareness and women’s health through elegance.',
+            name: 'MISS PINK RIBBON Kenya',
+            desc: "Promoting breast cancer awareness and women's health through elegance.",
             icon: <Heart className="h-6 w-6 text-pink-600" />,
             href: '/initiatives/miss-pink-ribbon',
             color: 'bg-pink-50'

@@ -6,8 +6,8 @@ export default function HistoryPage() {
         { year: "2012", event: "Foundation of ArtWorld Institute to bridge the gap in arts education in Kenya." },
         { year: "2015", event: "Launch of first major community outreach program, reaching over 1000 youth." },
         { year: "2018", event: "Establishment of the Research & Publications department for cultural scholarship." },
-        { year: "2021", event: "Expansion of flagship initiatives including NIFA and KIKAOO Awards." },
-        { year: "2026", event: "Global recognition as a leader in arts-led climate action through Heal the Future." }
+        { year: "2021", event: "Expansion of flagship initiatives including NIFA and KIKAOO AWARDS." },
+        { year: "2026", event: "Global recognition as a leader in arts-led climate action through Heal the Future Climate Action Program." }
     ];
 
     return (
