@@ -147,10 +147,10 @@ export function Navbar() {
           ) : (
             <div className="hidden md:flex items-center gap-3">
               <Button variant="ghost" asChild>
-                <Link href="/signin">Sign In</Link>
+                <Link href="/login">Sign In</Link>
               </Button>
               <Button asChild>
-                <Link href="/registration">Join Community</Link>
+                <Link href="/register">Join Community</Link>
               </Button>
             </div>
           )}
@@ -204,10 +204,10 @@ export function Navbar() {
           {!user && (
             <div className="flex flex-col space-y-2 pt-2 border-t mt-4">
               <Button variant="outline" asChild className="w-full">
-                <Link href="/signin" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
+                <Link href="/login" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
               </Button>
               <Button asChild className="w-full">
-                <Link href="/registration" onClick={() => setIsMenuOpen(false)}>Join Community</Link>
+                <Link href="/register" onClick={() => setIsMenuOpen(false)}>Join Community</Link>
               </Button>
             </div>
           )}

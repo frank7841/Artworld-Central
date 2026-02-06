@@ -35,7 +35,7 @@ export const useAuthStore = create<AuthState>()(
             email,
             role,
             membershipTier: tier,
-            avatar: `https://picsum.photos/seed/${email}/200`,
+            avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(email.split('@')[0])}&background=D4AF37&color=fff`,
             program: role === 'TALENT' ? 'KACDP' : undefined
           }
         });

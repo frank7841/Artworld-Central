@@ -76,7 +76,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="h-16 px-10 text-lg font-bold" asChild>
-                <Link href="/registration">Join the Community</Link>
+                <Link href="/register">Join the Community</Link>
               </Button>
               <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold bg-white/5 border-white/20 hover:bg-white/10" asChild>
                 <Link href="/programs">Our Programs</Link>
@@ -190,7 +190,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="h-16 px-12 text-lg font-bold" asChild>
-              <Link href="/registration">Start Free Membership</Link>
+              <Link href="/register">Start Free Membership</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-16 px-12 text-lg font-bold hover:text-white text-primary border-white/20" asChild>
               <Link href="/community">Visit Community Hub</Link>
