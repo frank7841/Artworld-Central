@@ -1,9 +1,9 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Zap, Trophy, Heart, Leaf, Clock, Sparkles, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, ArrowRight } from 'lucide-react';
+import { ExploreMore } from '@/components/layout/ExploreMore';
 
 export default function InitiativesPage() {
     const initiatives = [
@@ -91,6 +91,17 @@ export default function InitiativesPage() {
                     </div>
                 </div>
             </div>
+
+            <ExploreMore
+                type="Programs"
+                title="Our Core Programs"
+                description="Join our specialized communities and gain access to resources, mentorship, and professional growth."
+                items={[
+                    { id: 'arts-ed', name: 'Arts Education', desc: 'Practical workshops in fine arts, digital media, and performance.', icon: <Palette />, href: '/programs/arts-education', color: 'bg-muted/50' },
+                    { id: 'festivals', name: 'Festivals & Events', desc: 'Showcasing the best of Kenyan and African creativity to the world.', icon: <Zap />, href: '/programs/festivals', color: 'bg-muted/50' },
+                    { id: 'schools', name: 'Schools Programs', desc: 'Bringing the arts to the classroom through workshops and competitions.', icon: <Book />, href: '/programs/schools', color: 'bg-muted/50' }
+                ]}
+            />
         </div>
     );
 }

@@ -59,8 +59,7 @@ const courses = [
 
 export default function AcademyPage() {
   return (
-    <div className="min-h-screen bg-[#F8F9FA]">
-      <Navbar />
+    <div className="bg-[#F8F9FA]">
 
       {/* Hero Section */}
       <section className="relative bg-primary overflow-hidden py-24">
@@ -246,22 +245,6 @@ export default function AcademyPage() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white border-t py-16">
-        <div className="container mx-auto px-4 text-center">
-          <div className="font-headline font-bold text-2xl tracking-tight text-primary mb-6">
-            ARTWORLD<span className="text-secondary ml-1">INSTITUTE</span>
-          </div>
-          <div className="flex justify-center gap-8 mb-8 text-sm font-bold text-muted-foreground uppercase tracking-widest">
-            <Link href="/programs" className="hover:text-primary transition-colors">Programs</Link>
-            <Link href="/community" className="hover:text-primary transition-colors">Community</Link>
-            <Link href="/academy" className="hover:text-primary transition-colors">Academy</Link>
-            <Link href="/events" className="hover:text-primary transition-colors">Events</Link>
-          </div>
-          <p className="text-muted-foreground text-sm font-medium">© 2026 Artworld Institute. Empowering Africa's Creative Economy.</p>
-        </div>
-      </footer>
     </div>
   );
 }

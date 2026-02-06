@@ -52,9 +52,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-
+    <div className="space-y-0">
       {/* Hero Section */}
       <section className="relative min-h-[80vh] md:h-[90vh] flex items-center overflow-hidden">
         <Image
@@ -201,7 +199,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

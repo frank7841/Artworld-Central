@@ -1,12 +1,12 @@
 
 'use client';
 
-import { Navbar } from '@/components/navigation/navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette } from 'lucide-react';
+import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles } from 'lucide-react';
+import { ExploreMore } from '@/components/layout/ExploreMore';
 
 const allPrograms = [
   { id: 'pink-ribbon', name: 'Miss Pink Ribbon Kenya', tag: 'Advocacy', icon: <Heart /> },
@@ -21,8 +21,7 @@ const allPrograms = [
 
 export default function ProgramsPage() {
   return (
-    <div className="min-h-screen bg-muted/20 pb-20">
-      <Navbar />
+    <div className="bg-muted/20 pb-0">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mb-12">
           <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Programs & Initiatives</h1>
@@ -48,6 +47,38 @@ export default function ProgramsPage() {
           ))}
         </div>
       </div>
+
+      <ExploreMore
+        type="Initiatives"
+        title="Our Flagship Initiatives"
+        description="Explore our high-impact projects driving social change and creative excellence across Kenya."
+        items={[
+          {
+            id: 'nifa',
+            name: 'Nairobi Festival of Arts',
+            desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
+            icon: <Zap className="h-6 w-6 text-primary" />,
+            href: '/initiatives/nifa',
+            color: 'bg-blue-50'
+          },
+          {
+            id: 'kikaoo-awards',
+            name: 'KIKAOO Awards',
+            desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
+            icon: <Trophy className="h-6 w-6 text-primary" />,
+            href: '/initiatives/kikaoo-awards',
+            color: 'bg-amber-50'
+          },
+          {
+            id: 'miss-pink-ribbon',
+            name: 'Miss Pink Ribbon Kenya',
+            desc: 'Promoting breast cancer awareness and women’s health through elegance.',
+            icon: <Heart className="h-6 w-6 text-pink-600" />,
+            href: '/initiatives/miss-pink-ribbon',
+            color: 'bg-pink-50'
+          }
+        ]}
+      />
     </div>
   );
 }
