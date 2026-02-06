@@ -65,7 +65,7 @@ export default function Home() {
           priority
           data-ai-hint={heroImg?.imageHint}
         />
-        <div className="container mx-auto px-4 relative z-10 text-white">
+        <div className="container mx-auto px-4 relative z-10 text-white py-12">
           <div className="max-w-4xl space-y-8">
             <Badge variant="outline" className="text-primary border-primary border-2 px-4 py-1 font-bold text-sm bg-primary/10">
               KENYA'S HUB FOR CREATIVE & SOCIAL IMPACT
