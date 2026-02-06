@@ -4,6 +4,7 @@ import { Footer } from '@/components/navigation/footer';
 import { Badge } from '@/components/ui/badge';
 import { Users, Leaf, Heart, Globe, Quote, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 export default function ImpactPage() {
     const stats = [
