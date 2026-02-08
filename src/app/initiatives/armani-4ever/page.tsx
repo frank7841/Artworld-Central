@@ -26,7 +26,7 @@ export default function Armani4EverPage() {
                                 <span className="text-amber-600 italic">4Ever</span>
                             </h1>
                             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                                Armani 4Ever is a creative advocacy campaign using fashion, art, and storytelling to inspire youth confidence and positive social identity.
+                                Armani 4Ever is a creative advocacy campaign using fashion, art, and storytelling to inspire youth confidence, self-expression, and positive social identity.
                             </p>
                             <Button size="lg" className="bg-zinc-900 hover:bg-black text-white h-14 md:h-16 px-8 md:px-10 font-bold text-base md:text-lg rounded-xl md:rounded-2xl w-full sm:w-auto">
                                 Join the Campaign

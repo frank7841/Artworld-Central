@@ -26,7 +26,7 @@ export default function MissPinkRibbonPage() {
                                 <span className="text-pink-600 italic">Ribbon Kenya</span>
                             </h1>
                             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                                Miss Pink Ribbon Kenya is a purpose-driven pageant that combines elegance with advocacy, promoting breast cancer awareness, women’s health education, and community empowerment.
+                                Miss Pink Ribbon Kenya is a purpose-driven beauty pageant that combines elegance with advocacy, promoting breast cancer awareness, women’s health education, and community empowerment.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
                                 <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white h-14 md:h-16 px-8 md:px-10 font-bold text-base md:text-lg rounded-xl md:rounded-2xl w-full sm:w-auto">
@@ -67,8 +67,8 @@ export default function MissPinkRibbonPage() {
                         <div className="grid lg:grid-cols-2">
                             <div className="p-8 md:p-16 space-y-6 md:space-y-8 text-white">
                                 <h2 className="text-3xl md:text-4xl font-headline font-bold">Support the Cause</h2>
-                                <p className="text-lg opacity-80 leading-relaxed">
-                                    Your contribution helps us provide free screenings and support for women across Kenya. Join us in the fight against breast cancer.
+                                <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
+                                    Nairobi Film Festival is a platform for showcasing powerful local and international films that reflect social realities, cultural identity, and innovative storytelling.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4 md:gap-8 my-6 md:my-10">
                                     <div>

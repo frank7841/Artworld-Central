@@ -2,7 +2,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
-import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, ArrowRight } from 'lucide-react';
+import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, ArrowRight, Users, Mic, GraduationCap, Clapperboard, ShoppingBag, HandHeart, Library, Shield, Dumbbell, PiggyBank, Newspaper } from 'lucide-react';
 import { ExploreMore } from '@/components/layout/ExploreMore';
 
 export default function InitiativesPage() {
@@ -10,7 +10,7 @@ export default function InitiativesPage() {
         {
             id: 'nifa',
             name: 'Nairobi Festival of Arts NFA',
-            desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
+            desc: 'Nairobi Festival of Arts is a multidisciplinary cultural festival bringing together visual arts, performance, literature, film, and music to celebrate creativity and cultural diversity.',
             icon: <Zap className="h-6 w-6 text-primary" />,
             href: '/initiatives/nifa',
             color: 'bg-blue-50'
@@ -18,7 +18,7 @@ export default function InitiativesPage() {
         {
             id: 'kikaoo-awards',
             name: 'KIKAOO AWARDS',
-            desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
+            desc: 'The KIKAOO Awards celebrate excellence in film, storytelling, and creative expression, recognizing outstanding artists, filmmakers, and cultural contributors from Kenya and beyond.',
             icon: <Trophy className="h-6 w-6 text-primary" />,
             href: '/initiatives/kikaoo-awards',
             color: 'bg-amber-50'
@@ -26,7 +26,7 @@ export default function InitiativesPage() {
         {
             id: 'miss-pink-ribbon',
             name: 'MISS PINK RIBBON Kenya',
-            desc: 'Promoting breast cancer awareness and women’s health through elegance.',
+            desc: 'Miss Pink Ribbon Kenya is a purpose-driven beauty pageant that combines elegance with advocacy, promoting breast cancer awareness, women’s health education, and community empowerment.',
             icon: <Heart className="h-6 w-6 text-pink-600" />,
             href: '/initiatives/miss-pink-ribbon',
             color: 'bg-pink-50'
@@ -34,7 +34,7 @@ export default function InitiativesPage() {
         {
             id: 'heal-future',
             name: 'Heal the Future Climate Action Program',
-            desc: 'Arts-led climate action initiative empowering youth to address environmental challenges.',
+            desc: 'Heal the Future is an arts-led climate action initiative that empowers schools, youth, and communities to address environmental challenges through creative education, awareness campaigns, and sustainable practices.',
             icon: <Leaf className="h-6 w-6 text-green-600" />,
             href: '/initiatives/heal-future',
             color: 'bg-green-50'
@@ -50,10 +50,98 @@ export default function InitiativesPage() {
         {
             id: 'armani-4ever',
             name: 'Armani 4Ever Campaign',
-            desc: 'Creative advocacy inspiring youth confidence and positive identity.',
+            desc: 'Armani 4Ever is a creative advocacy campaign using fashion, art, and storytelling to inspire youth confidence, self-expression, and positive social identity.',
             icon: <Sparkles className="h-6 w-6 text-amber-600" />,
             href: '/initiatives/armani-4ever',
             color: 'bg-orange-50'
+        },
+        {
+            id: 'castreal-agency',
+            name: 'CastReal Agency',
+            desc: 'CastReal Agency is a professional talent and casting agency connecting models, actors, and performers with opportunities in film, fashion, advertising, and creative productions.',
+            icon: <Users className="h-6 w-6 text-violet-600" />,
+            href: '/initiatives/castreal-agency',
+            color: 'bg-violet-50'
+        },
+        {
+            id: 'kikao-open-mic',
+            name: 'KIKAOO Open MIC Live',
+            desc: 'KIKAOO Open MIC Live is a vibrant performance platform for poets, musicians, comedians, and spoken-word artists to share original work and connect with live audiences.',
+            icon: <Mic className="h-6 w-6 text-rose-600" />,
+            href: '/initiatives/kikao-open-mic',
+            color: 'bg-rose-50'
+        },
+        {
+            id: 'artworld-institute',
+            name: 'ArtWorld Institute',
+            desc: 'ArtWorld Institute is a premier arts training and research institution dedicated to nurturing creativity, advancing cultural knowledge, and shaping future artistic leaders through education, innovation, and community engagement.',
+            icon: <GraduationCap className="h-6 w-6 text-blue-800" />,
+            href: '/initiatives/artworld-institute',
+            color: 'bg-blue-50'
+        },
+        {
+            id: 'nairobi-film-festival',
+            name: 'Nairobi Film Festival',
+            desc: 'Nairobi Film Festival is a platform for showcasing powerful local and international films that reflect social realities, cultural identity, and innovative storytelling.',
+            icon: <Clapperboard className="h-6 w-6 text-red-600" />,
+            href: '/initiatives/nairobi-film-festival',
+            color: 'bg-red-50'
+        },
+        {
+            id: 'nairobi-pop-life',
+            name: 'NAIROBI POP LIFE',
+            desc: 'Nairobi Pop Life captures and celebrates urban culture, youth expression, music, fashion, and contemporary lifestyle trends shaping the modern African city.',
+            icon: <ShoppingBag className="h-6 w-6 text-pink-500" />,
+            href: '/initiatives/nairobi-pop-life',
+            color: 'bg-pink-50'
+        },
+        {
+            id: 'kacdp',
+            name: 'KACDP',
+            desc: 'KACDP is a cultural development program focused on arts education, community participation, and creative capacity building as tools for social and economic growth.',
+            icon: <HandHeart className="h-6 w-6 text-green-700" />,
+            href: '/initiatives/kacdp',
+            color: 'bg-green-50'
+        },
+        {
+            id: 'kikaoo-book-week',
+            name: 'KIKAOO NATIONAL BOOK WEEK',
+            desc: 'KIKAOO National Book Week promotes reading, writing, and literary culture through author engagements, school programs, book exhibitions, and storytelling forums.',
+            icon: <Library className="h-6 w-6 text-amber-700" />,
+            href: '/initiatives/kikaoo-book-week',
+            color: 'bg-amber-50'
+        },
+        {
+            id: 'transport-safety-awards',
+            name: 'National Transport & Safety Awards',
+            desc: 'The Kenya National Transport and Safety Awards recognize excellence, innovation, and responsibility in transport, road safety, and mobility across the country.',
+            icon: <Shield className="h-6 w-6 text-slate-700" />,
+            href: '/initiatives/transport-safety-awards',
+            color: 'bg-slate-50'
+        },
+        {
+            id: 'awi-sports-club',
+            name: 'AWI Sports and Arts Club',
+            desc: 'A holistic community for creatives to nurture physical health and artistic spirit.',
+            icon: <Dumbbell className="h-6 w-6 text-orange-600" />,
+            href: '/initiatives/awi-sports-club',
+            color: 'bg-orange-50'
+        },
+        {
+            id: 'awi-welfare-club',
+            name: 'AWI Welfare Investment Club',
+            desc: 'Securing the financial future of the creative community through collective investment.',
+            icon: <PiggyBank className="h-6 w-6 text-emerald-600" />,
+            href: '/initiatives/awi-welfare-club',
+            color: 'bg-emerald-50'
+        },
+        {
+            id: 'artworld-journal',
+            name: 'ArtWorld Journal',
+            desc: 'The definitive voice on African art, culture, critic, and creative policy.',
+            icon: <Newspaper className="h-6 w-6 text-stone-700" />,
+            href: '/initiatives/artworld-journal',
+            color: 'bg-stone-50'
         }
     ];
 

@@ -26,7 +26,7 @@ export default function NIFAPage() {
                                 <span className="text-primary italic">of Arts</span>
                             </h1>
                             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                                NIFA is a multidisciplinary cultural festival bringing together visual arts, performance, literature, film, and music to celebrate creativity and cultural diversity.
+                                Nairobi Festival of Arts is a multidisciplinary cultural festival bringing together visual arts, performance, literature, film, and music to celebrate creativity and cultural diversity.
                             </p>
                             <div className="flex flex-wrap gap-6 pt-4">
                                 <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">

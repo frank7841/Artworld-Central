@@ -25,9 +25,7 @@ export default function HealTheFuturePage() {
                                 Heal the <br />
                                 <span className="text-green-600 italic">Future</span>
                             </h1>
-                            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                                Heal the Future is an arts-led climate action initiative that empowers schools, youth, and communities to address environmental challenges through creative education.
-                            </p>
+                            Heal the Future is an arts-led climate action initiative that empowers schools, youth, and communities to address environmental challenges through creative education, awareness campaigns, and sustainable practices.
                             <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white h-14 md:h-16 px-8 md:px-10 font-bold text-base md:text-lg rounded-xl md:rounded-2xl w-full sm:w-auto">
                                 Get Involved in Climate Action
                             </Button>
