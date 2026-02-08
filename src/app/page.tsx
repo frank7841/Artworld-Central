@@ -19,7 +19,7 @@ export default function Home() {
       tag: 'Festival',
       desc: 'Multidisciplinary cultural festival celebrating visual arts, performance, and music.',
       icon: <Zap className="h-5 w-5 text-primary" />,
-      img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl,
+      img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl || '',
       href: '/programs/festivals'
     },
     {
@@ -28,7 +28,7 @@ export default function Home() {
       tag: 'Excellence',
       desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
       icon: <Trophy className="h-5 w-5 text-primary" />,
-      img: 'https://images.unsplash.com/photo-1531050171651-61afc2834d75?q=80&w=800',
+      img: 'https://unsplash.com/photos/a-glass-vase-sitting-on-top-of-a-table-Lu0oB7yoGV0',
       href: '/initiatives/kikaoo-awards'
     },
     {
@@ -46,7 +46,7 @@ export default function Home() {
       tag: 'Advocacy',
       desc: 'Promoting breast cancer awareness and women’s health through elegance.',
       icon: <Heart className="h-5 w-5 text-primary" />,
-      img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl,
+      img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl || '',
       href: '/initiatives/miss-pink-ribbon'
     }
   ];
