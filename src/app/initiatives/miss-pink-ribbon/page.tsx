@@ -1,101 +1,299 @@
-
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Heart, Star, Users, Zap, ShieldPlus } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { CheckCircle2, Heart, Scale, Users, Calendar, MapPin, Mail, Phone, Globe } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function MissPinkRibbonPage() {
-    const objectives = [
-        { title: "Breast Cancer Awareness", icon: <ShieldPlus className="h-6 w-6" />, desc: "Promoting early detection and health education nationwide." },
-        { title: "Women's Empowerment", icon: <Users className="h-6 w-6" />, desc: "Empowering young women to become advocates and leaders." },
-        { title: "Elegance & Advocacy", icon: <Star className="h-6 w-6" />, desc: "Combining beauty with purpose-driven community impact." },
-        { title: "Health Screenings", icon: <Heart className="h-6 w-6" />, desc: "Facilitating access to medical services for underserved communities." }
-    ];
+    const heroImg = PlaceHolderImages.find(img => img.id === 'program-pink-ribbon');
 
     return (
-        <div className="py-12 md:py-24 bg-pink-50/20">
-            <div className="container mx-auto px-4">
-                <div className="max-w-5xl mx-auto space-y-24">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
-                            <Badge className="bg-pink-600 text-white px-4 py-1.5 uppercase font-extrabold tracking-widest text-xs border-none">
-                                Beauty with Purpose
-                            </Badge>
-                            <h1 className="text-4xl md:text-7xl font-headline font-bold leading-tight">
-                                Miss Pink <br />
-                                <span className="text-pink-600 italic">Ribbon Kenya</span>
-                            </h1>
-                            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                                Miss Pink Ribbon Kenya is a purpose-driven beauty pageant that combines elegance with advocacy, promoting breast cancer awareness, women’s health education, and community empowerment.
+        <div className="min-h-screen bg-background text-foreground">
+            {/* Hero Section */}
+            <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+                <Image
+                    src={heroImg?.imageUrl || '/image/misspinkribbon.jpeg'}
+                    alt="Miss Pink Ribbon Kenya"
+                    fill
+                    className="object-cover brightness-[0.4]"
+                    priority
+                    data-ai-hint={heroImg?.imageHint}
+                />
+                <div className="absolute inset-0 bg-pink-900/30 mix-blend-multiply" />
+                <div className="container mx-auto px-4 relative z-10 text-center text-white space-y-8">
+                    {/* <Badge className="bg-pink-600 hover:bg-pink-700 text-white text-lg px-6 py-2 rounded-full mb-4 border-none shadow-lg shadow-pink-500/20">
+                        2025 – 2029
+                    </Badge> */}
+                    <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-lg">
+                        Miss Pink Ribbon <span className="text-pink-400 italic">Kenya</span>
+                    </h1>
+                    <div className="max-w-3xl mx-auto space-y-4">
+                        <p className="text-2xl md:text-3xl font-light italic text-pink-100">
+                            "Kuwa kivuli kwa wanaohitaji, kuwa sauti kwa wasio na uwezo."
+                        </p>
+                        <p className="text-lg md:text-xl font-medium opacity-90">
+                            (Be a shadow for those in need, a voice for the voiceless.)
+                        </p>
+                    </div>
+                    <div className="pt-8 flex flex-col sm:flex-row justify-center gap-4">
+                        <Button size="lg" className="h-14 px-8 text-lg font-bold bg-pink-600 hover:bg-pink-700 text-white shadow-lg shadow-pink-500/30 border-none" asChild>
+                            <Link href="https://forms.gle/csJR7npkCiAQnmrS8" target="_blank" rel="noopener noreferrer">
+                                Register Now
+                            </Link>
+                        </Button>
+                        <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm" asChild>
+                            <Link href="#">
+                                Become a Sponsor
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
+            {/* Introduction */}
+            <section className="py-20 md:py-32 bg-gradient-to-b from-white to-pink-50/50">
+                <div className="container mx-auto px-4 max-w-4xl text-center space-y-8">
+                    <h2 className="text-4xl md:text-5xl font-headline font-bold text-gray-900">
+                        Celebrating <span className="text-pink-600">Beauty</span>, <span className="text-pink-600">Advocacy</span> & <span className="text-pink-600">Life</span>
+                    </h2>
+                    <p className="text-xl text-muted-foreground leading-relaxed">
+                        The Miss Pink Ribbon Kenya pageant is more than a competition; it is a movement. We are looking for ambassadors who represent the values of <span className="font-semibold text-pink-700">Utu</span> and <span className="font-semibold text-pink-700">Harambee</span>, dedicated to raising awareness for breast cancer and supporting those affected by it.
+                    </p>
+                    <div className="flex justify-center">
+                        <Separator className="w-32 h-1.5 bg-pink-500 rounded-full" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Requirements Section */}
+            <section id="requirements" className="py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <Badge variant="outline" className="border-pink-200 text-pink-600 mb-4">Participation</Badge>
+                            <h2 className="text-3xl md:text-4xl font-headline font-bold text-gray-900">
+                                Eligibility & Requirements
+                            </h2>
+                        </div>
+
+                        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+                            {/* Eligibility Criteria */}
+                            <Card className="border-pink-100 shadow-xl shadow-pink-100/50 overflow-hidden">
+                                <CardHeader className="bg-pink-600 text-white p-6">
+                                    <CardTitle className="flex items-center gap-3 text-2xl">
+                                        <CheckCircle2 className="h-6 w-6" />
+                                        Eligibility Criteria
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-0">
+                                    <Accordion type="single" collapsible className="w-full" defaultValue="identity">
+                                        <AccordionItem value="identity" className="border-b px-6">
+                                            <AccordionTrigger className="font-bold text-lg py-4 hover:text-pink-600 text-left">A. National Identity & Residency</AccordionTrigger>
+                                            <AccordionContent className="text-muted-foreground pb-4">
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    <li>Must be a Kenyan citizen or a legal resident for a minimum of three (3) years.</li>
+                                                    <li>Must possess a valid National ID, Passport, or Alien Certificate.</li>
+                                                    <li>Proficiency in both English and Kiswahili is required; knowledge of local dialects is an added advantage.</li>
+                                                </ul>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                        <AccordionItem value="age" className="border-b px-6">
+                                            <AccordionTrigger className="font-bold text-lg py-4 hover:text-pink-600 text-left">B. Age & Health Advocacy</AccordionTrigger>
+                                            <AccordionContent className="text-muted-foreground pb-4">
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    <li>Must be between 16 and 35 years old by the date of the National Launch.</li>
+                                                    <li>Must demonstrate a genuine commitment to breast cancer awareness—as a survivor, caregiver, or advocate.</li>
+                                                    <li>Must be in good physical and mental health to undertake the responsibilities of a titleholder.</li>
+                                                </ul>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                        <AccordionItem value="character" className="border-b px-6">
+                                            <AccordionTrigger className="font-bold text-lg py-4 hover:text-pink-600 text-left">C. Personal & Professional Character</AccordionTrigger>
+                                            <AccordionContent className="text-muted-foreground pb-4">
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    <li>Must be of good moral character, with no criminal record or involvement in activities contrary to the pageant’s mission.</li>
+                                                    <li>Must uphold Kenyan values of Utu (humanity) and Harambee (community) in public and private conduct.</li>
+                                                    <li>Must not have visible tattoos or piercings (except earrings) during official appearances.</li>
+                                                </ul>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                        <AccordionItem value="inclusivity" className="px-6 border-none">
+                                            <AccordionTrigger className="font-bold text-lg py-4 hover:text-pink-600 text-left">D. Inclusivity Statement</AccordionTrigger>
+                                            <AccordionContent className="text-muted-foreground pb-4">
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    <li>Open to women and men who identify with the cause.</li>
+                                                    <li>Open to individuals of all marital and parental statuses—single, married, divorced, widowed, with or without children.</li>
+                                                    <li>Celebrates diversity in body type, background, and experience.</li>
+                                                </ul>
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    </Accordion>
+                                </CardContent>
+                            </Card>
+
+                            {/* Entry & Participation */}
+                            <Card className="border-pink-100 shadow-xl shadow-pink-100/50 h-fit overflow-hidden">
+                                <CardHeader className="bg-pink-900 text-white p-6">
+                                    <CardTitle className="flex items-center gap-3 text-2xl">
+                                        <Users className="h-6 w-6 text-pink-300" />
+                                        Entry & Participation
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="p-8 space-y-8 bg-pink-50/30">
+
+                                    <div>
+                                        <h3 className="font-bold text-xl mb-4 flex items-center gap-2 text-pink-900">
+                                            <Scale className="h-5 w-5 text-pink-600" /> Registration Process
+                                        </h3>
+                                        <ol className="list-decimal pl-5 space-y-3 text-muted-foreground">
+                                            <li>Complete the Official Registration Form (available online or at County offices).</li>
+                                            <li>
+                                                <strong>Pay Required Fees:</strong>
+                                                <ul className="list-disc pl-5 mt-2 space-y-1">
+                                                    <li>Form Fee: Ksh 50 (non-refundable)</li>
+                                                    <li>Registration Fee: Ksh 1,000</li>
+                                                    <li>Photo Shoot Fee: Ksh 1,000 (includes portfolio session)</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Submit Supporting Documents:</strong>
+                                                <ul className="list-disc pl-5 mt-2 space-y-1">
+                                                    <li>Copy of ID/Passport</li>
+                                                    <li>One recent passport-sized photograph</li>
+                                                    <li>Short personal statement (max 200 words) on “Why I Am an Advocate for Cancer Awareness”</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <Separator className="bg-pink-100" />
+
+                                    <div>
+                                        <h3 className="font-bold text-xl mb-3 text-pink-900">Contestant Commitment</h3>
+                                        <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+                                            <li>Must attend all mandatory rehearsals, workshops, and public events.</li>
+                                            <li>Must adhere to the Official Dress Code for each stage of the pageant.</li>
+                                            <li>Must participate in fundraising and voter awareness campaigns as outlined in the Contestant Agreement.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="bg-white p-4 rounded-lg border border-pink-100">
+                                        <h3 className="font-bold text-lg mb-3 text-pink-900">Judging Criteria</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            <Badge variant="secondary" className="bg-pink-100 text-pink-800 hover:bg-pink-200">Judges’ Evaluation</Badge>
+                                            <Badge variant="secondary" className="bg-pink-100 text-pink-800 hover:bg-pink-200">Public Voting</Badge>
+                                            <Badge variant="secondary" className="bg-pink-100 text-pink-800 hover:bg-pink-200">Fundraising Impact</Badge>
+                                        </div>
+                                    </div>
+
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Obligations & Disqualification */}
+            <section className="py-20 bg-pink-900 text-white">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <div className="grid md:grid-cols-2 gap-16">
+                        <div className="space-y-8">
+                            <h3 className="text-3xl font-headline font-bold flex items-center gap-3">
+                                <Heart className="h-8 w-8 text-pink-400" /> Titleholder Obligations
+                            </h3>
+                            <p className="text-pink-100/80 text-lg">If selected as a County or National Titleholder, the contestant agrees to:</p>
+                            <ul className="space-y-6">
+                                {[
+                                    "Serve as an ambassador for breast cancer awareness for one year.",
+                                    "Make a minimum of 12 official appearances.",
+                                    "Not compete in or hold titles from other pageants during their reign.",
+                                    "Abide by all rules in the Titleholder Contract and Code of Conduct."
+                                ].map((item, i) => (
+                                    <li key={i} className="flex gap-4">
+                                        <div className="bg-pink-800 p-1 rounded-full h-fit">
+                                            <CheckCircle2 className="h-5 w-5 text-pink-300 flex-shrink-0" />
+                                        </div>
+                                        <span className="text-pink-50 leading-relaxed">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="space-y-8">
+                            <h3 className="text-3xl font-headline font-bold text-white flex items-center gap-3">
+                                <Scale className="h-8 w-8 text-pink-400" /> Disqualification
+                            </h3>
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+                                <ul className="space-y-4">
+                                    {[
+                                        "Providing false information during registration.",
+                                        "Misconduct or violation of the Code of Conduct.",
+                                        "Failure to participate in mandatory events without prior approval.",
+                                        "Engaging in activities that bring the pageant into disrepute."
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex gap-4 items-start">
+                                            <span className="h-2 w-2 rounded-full bg-pink-500 mt-2.5 flex-shrink-0 shadow-[0_0_10px_rgba(236,72,153,0.7)]" />
+                                            <span className="text-pink-100">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <p className="text-sm text-pink-300/80 italic mt-4 pl-2 border-l-2 border-pink-500">
+                                By submitting an application, you certify that all information provided is true and agree to the Official Rules.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                <Button size="lg" className="bg-pink-600 hover:bg-pink-700 text-white h-14 md:h-16 px-8 md:px-10 font-bold text-base md:text-lg rounded-xl md:rounded-2xl w-full sm:w-auto">
-                                    Register as a Contestant
-                                </Button>
-                                <Button size="lg" variant="outline" className="border-pink-200 text-pink-700 hover:bg-pink-50 h-14 md:h-16 px-8 md:px-10 font-bold text-base md:text-lg rounded-xl md:rounded-2xl w-full sm:w-auto">
-                                    Become a Sponsor
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="relative aspect-square md:aspect-[3/4] rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl order-1 lg:order-2 border-4 md:border-8 border-white">
-                            <Image
-                                src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800"
-                                alt="Miss Pink Ribbon Kenya"
-                                fill
-                                className="object-cover"
-                            />
-                            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm p-4 rounded-2xl border border-pink-100 shadow-sm text-center">
-                                <Heart className="h-8 w-8 text-pink-600 mx-auto mb-2" />
-                                <p className="font-bold text-pink-600 uppercase tracking-widest text-xs">Advocacy First</p>
-                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-                        {objectives.map((obj, index) => (
-                            <div key={index} className="p-6 md:p-8 rounded-2xl md:rounded-[32px] bg-white shadow-sm border border-pink-100 hover:border-pink-300 transition-all text-center">
-                                <div className="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center text-pink-600 mx-auto mb-6">
-                                    {obj.icon}
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">{obj.title}</h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed">{obj.desc}</p>
-                            </div>
-                        ))}
-                    </div>
+            {/* Contact Section */}
+            <section id="contact" className="py-20 md:py-32 bg-white">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-4xl md:text-5xl font-headline font-bold mb-16 text-gray-900">Contact & Support</h2>
 
-                    <div className="relative rounded-3xl md:rounded-[40px] overflow-hidden bg-pink-900 shadow-2xl">
-                        <div className="grid lg:grid-cols-2">
-                            <div className="p-8 md:p-16 space-y-6 md:space-y-8 text-white">
-                                <h2 className="text-3xl md:text-4xl font-headline font-bold">Support the Cause</h2>
-                                <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
-                                    Nairobi Film Festival is a platform for showcasing powerful local and international films that reflect social realities, cultural identity, and innovative storytelling.
-                                </p>
-                                <div className="grid grid-cols-2 gap-4 md:gap-8 my-6 md:my-10">
-                                    <div>
-                                        <div className="text-3xl md:text-4xl font-bold text-pink-400">1M+</div>
-                                        <div className="text-[10px] md:text-xs uppercase tracking-widest opacity-60">People reached</div>
-                                    </div>
-                                    <div>
-                                        <div className="text-3xl md:text-4xl font-bold text-pink-400">5k+</div>
-                                        <div className="text-[10px] md:text-xs uppercase tracking-widest opacity-60">Screenings funded</div>
-                                    </div>
-                                </div>
-                                <Button size="lg" className="bg-white text-pink-900 hover:bg-pink-50 h-14 md:h-16 px-8 md:px-12 font-bold text-base md:text-lg rounded-xl md:rounded-2xl w-full sm:w-auto">
-                                    Donate to the Program
-                                </Button>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <MapPin className="h-8 w-8 text-pink-600" />
                             </div>
-                            <div className="relative h-full min-h-[300px]">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?q=80&w=800"
-                                    alt="Awareness Walk"
-                                    fill
-                                    className="object-cover"
-                                />
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Visit Us</h4>
+                                <p className="text-muted-foreground">Miss Pink Ribbon Kenya Secretariat<br />P.O. Box 25542–00100, Nairobi</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <Phone className="h-8 w-8 text-pink-600" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Call Us</h4>
+                                <p className="text-muted-foreground">+254 700 000 000</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <Mail className="h-8 w-8 text-pink-600" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Email Us</h4>
+                                <p className="text-muted-foreground">info@misspinkribbonkenya.org</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <Globe className="h-8 w-8 text-pink-600" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Online</h4>
+                                <p className="text-muted-foreground">www.misspinkribbonkenya.org</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

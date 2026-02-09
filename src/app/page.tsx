@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CheckCircle2, Star, Users, Briefcase, Trophy, Zap, GraduationCap, Heart, Leaf, Book, Film, Mic2 } from 'lucide-react';
+import { MissPinkRibbonModal } from '@/components/modals/miss-pink-ribbon-modal';
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
@@ -199,6 +200,7 @@ export default function Home() {
         </div>
       </section>
 
+      <MissPinkRibbonModal />
     </div>
   );
 }
