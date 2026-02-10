@@ -35,18 +35,15 @@ export function MissPinkRibbonModal() {
                         className="object-cover brightness-[0.6]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                        <Badge className="bg-primary text-secondary mb-2 hover:bg-primary/90">2025 – 2029</Badge>
-                        <DialogTitle className="text-2xl sm:text-3xl font-headline font-bold text-white leading-tight">
-                            Miss Pink Ribbon <span className="text-primary italic">Kenya</span>
-                        </DialogTitle>
-                        <p className="text-white/90 text-sm italic font-light mt-1">
-                            "Kuwa kivuli kwa wanaohitaji..."
-                        </p>
-                    </div>
                 </div>
 
                 <div className="p-6 pt-4 space-y-4">
+                    <DialogTitle className="text-2xl sm:text-3xl font-headline font-bold  leading-tight">
+                        Miss Pink Ribbon <span className="text-primary italic">Kenya</span>
+                    </DialogTitle>
+                    <p className=" text-sm italic font-light mt-1">
+                        "Kuwa kivuli kwa wanaohitaji..."
+                    </p>
                     <DialogDescription className="text-muted-foreground text-base leading-relaxed">
                         Celebrating Beauty, Advocacy & Life. Join the movement to raise awareness for breast cancer and support those affected by it.
                     </DialogDescription>

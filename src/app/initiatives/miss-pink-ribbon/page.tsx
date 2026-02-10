@@ -255,67 +255,41 @@ export default function MissPinkRibbonPage() {
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-4xl md:text-5xl font-headline font-bold mb-16 text-gray-900">Contact & Support</h2>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <MapPin className="h-8 w-8 text-pink-600" />
-                            </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div className="flex flex-row items-center gap-6 group hover:-translate-y-2 transition-transform duration-300 text-left whitespace-wrap">
+                            <MapPin className="h-8 w-8 text-pink-600" />
+
                             <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Visit Us</h4>
+                                <h4 className="font-bold text-xl mb-1 text-gray-900">Visit Us</h4>
                                 <p className="text-muted-foreground">Miss Pink Ribbon Kenya Secretariat<br />P.O. Box 25542–00100, Nairobi</p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <Phone className="h-8 w-8 text-pink-600" />
-                            </div>
+                        <div className="flex flex-row items-center gap-6 group hover:-translate-y-2 transition-transform duration-300 text-left whitespace-wrap">
+                            <Phone className="h-8 w-8 text-pink-600" />
                             <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Call Us</h4>
-                                <p className="text-muted-foreground">+254 700 000 000</p>
+                                <h4 className="font-bold text-xl mb-1 text-gray-900">Call Us</h4>
+                                <p className="text-muted-foreground">+254 115 265 874</p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <Mail className="h-8 w-8 text-pink-600" />
-                            </div>
+                        <div className="flex flex-row items-center gap-6 group hover:-translate-y-2 transition-transform duration-300 text-left whitespace-wrap">
+                            <Mail className="h-8 w-8 text-pink-600" />
                             <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Email Us</h4>
+                                <h4 className="font-bold text-xl mb-1 text-gray-900">Email Us</h4>
                                 <p className="text-muted-foreground">info@misspinkribbonkenya.org</p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <Globe className="h-8 w-8 text-pink-600" />
-                            </div>
+
+                        <div className="flex flex-row items-center gap-6 group hover:-translate-y-2 transition-transform duration-300 text-left whitespace-wrap">
+                            <Instagram className="h-8 w-8 text-pink-600" />
                             <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Online</h4>
-                                <p className="text-muted-foreground">www.misspinkribbonkenya.org</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <Instagram className="h-8 w-8 text-pink-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Instagram</h4>
+                                <h4 className="font-bold text-xl mb-1 text-gray-900">Instagram</h4>
                                 <p className="text-muted-foreground"><Link href="https://www.instagram.com/misspinkribbonkenya?igsh=MWNoemVqbTJvaDhpYw%3D%3D&utm_source=qr">@misspinkribbonkenya</Link></p>
                             </div>
                         </div>
-                        {/* <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <Facebook className="h-8 w-8 text-pink-600" />
-                            </div>
+                        <div className="flex flex-row items-center gap-6 group hover:-translate-y-2 transition-transform duration-300 text-left whitespace-wrap">
+                            <Facebook className="h-8 w-8 text-pink-600" />
                             <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Facebook</h4>
-                                <p className="text-muted-foreground"><Link href="https://www.facebook.com/share/17eKxBwRXy/?mibextid=wwXIfr">@misspinkribbonkenya</Link></p>
-                            </div>
-                        </div> */}
-                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
-                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
-                                <Facebook className="h-8 w-8 text-pink-600" />
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-xl mb-2 text-gray-900">Facebook</h4>
+                                <h4 className="font-bold text-xl mb-1 text-gray-900">Facebook</h4>
                                 <p className="text-muted-foreground"><Link href="https://www.facebook.com/share/17eKxBwRXy/?mibextid=wwXIfr">@misspinkribbonkenya</Link></p>
                             </div>
                         </div>

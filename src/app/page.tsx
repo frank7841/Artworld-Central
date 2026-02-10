@@ -16,7 +16,7 @@ export default function Home() {
   const featuredPrograms = [
     {
       id: 'nifa',
-      name: 'Nairobi Festival of Arts NFA',
+      name: 'Nairobi Festival of Arts (NFA',
       tag: 'Festival',
       desc: 'Multidisciplinary cultural festival celebrating visual arts, performance, and music.',
       icon: <Zap className="h-5 w-5 text-primary" />,
@@ -147,12 +147,9 @@ export default function Home() {
                   <Badge className="absolute top-4 right-4 bg-primary text-secondary font-bold">
                     {program.tag}
                   </Badge>
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 text-white">
-                    {program.icon}
-                    <h3 className="font-headline font-bold text-xl">{program.name}</h3>
-                  </div>
                 </div>
                 <CardContent className="p-6 pt-4">
+                  <p className="flex items-center gap-2 font-bold text-lg mb-6"><span className="mr-2">{program.icon}</span>{program.name}</p>
                   <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                     {program.desc}
                   </p>
