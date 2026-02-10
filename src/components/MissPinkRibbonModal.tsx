@@ -44,7 +44,7 @@ export function MissPinkRibbonModal() {
                         </DialogClose>
                     </div>
 
-                    <div className="relative w-full aspect-[4/5] sm:aspect-square max-h-[80vh] rounded-2xl overflow-hidden shadow-2xl bg-white">
+                    <div className="relative w-full aspect-[6/7] sm:aspect-square max-h-[100vh] rounded-2xl overflow-hidden shadow-2xl bg-white">
                         <Image
                             src="/image/misspinkribbon.jpeg"
                             alt="Miss Pink Ribbon Kenya 2025–2029"

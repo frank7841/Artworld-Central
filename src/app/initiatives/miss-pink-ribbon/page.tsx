@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { CheckCircle2, Heart, Scale, Users, Calendar, MapPin, Mail, Phone, Globe } from 'lucide-react';
+import { CheckCircle2, Heart, Scale, Users, Calendar, MapPin, Mail, Phone, Globe, Instagram, Facebook } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -14,38 +14,41 @@ export default function MissPinkRibbonPage() {
     return (
         <div className="min-h-screen bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
-                <Image
-                    src={heroImg?.imageUrl || '/image/misspinkribbon.jpeg'}
-                    alt="Miss Pink Ribbon Kenya"
-                    fill
-                    className="object-cover brightness-[0.4]"
-                    priority
-                    data-ai-hint={heroImg?.imageHint}
-                />
-                <div className="absolute inset-0 bg-pink-900/30 mix-blend-multiply" />
-                <div className="container mx-auto px-4 relative z-10 text-center text-white space-y-8">
+            {/* Hero Section */}
+            {/* Hero Section */}
+            <section className="flex flex-col md:relative md:min-h-screen">
+                {/* Image block */}
+                <div className="relative w-full h-[50vh] md:absolute md:inset-0 md:h-full">
+                    <Image
+                        src={heroImg?.imageUrl || '/image/misspinkribbon.jpeg'}
+                        alt="Miss Pink Ribbon Kenya"
+                        fill
+                        className="object-cover object-top md:object-center brightness-100 md:brightness-[0.4]"
+                        priority
+                    />
+                </div>    <div className="absolute inset-0 bg-pink-900/30 mix-blend-multiply hidden md:block" />
+                <div className="container mx-auto px-4 relative z-10 text-center space-y-8 py-12 flex-1 flex flex-col justify-center md:absolute md:inset-0 md:h-full">
                     {/* <Badge className="bg-pink-600 hover:bg-pink-700 text-white text-lg px-6 py-2 rounded-full mb-4 border-none shadow-lg shadow-pink-500/20">
                         2025 – 2029
                     </Badge> */}
-                    <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-lg">
-                        Miss Pink Ribbon <span className="text-pink-400 italic">Kenya</span>
+                    <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-lg text-gray-900 md:text-white">
+                        Miss Pink Ribbon <span className="text-pink-600 md:text-pink-400 italic">Kenya</span>
                     </h1>
                     <div className="max-w-3xl mx-auto space-y-4">
-                        <p className="text-2xl md:text-3xl font-light italic text-pink-100">
+                        <p className="text-xl sm:text-2xl md:text-3xl font-light italic text-pink-800 md:text-pink-100">
                             "Kuwa kivuli kwa wanaohitaji, kuwa sauti kwa wasio na uwezo."
                         </p>
-                        <p className="text-lg md:text-xl font-medium opacity-90">
+                        <p className="text-base sm:text-lg md:text-xl font-medium text-gray-600 md:text-white/90">
                             (Be a shadow for those in need, a voice for the voiceless.)
                         </p>
                     </div>
                     <div className="pt-8 flex flex-col sm:flex-row justify-center gap-4">
-                        <Button size="lg" className="h-14 px-8 text-lg font-bold bg-pink-600 hover:bg-pink-700 text-white shadow-lg shadow-pink-500/30 border-none" asChild>
+                        <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg font-bold bg-pink-600 hover:bg-pink-700 text-white shadow-lg shadow-pink-500/30 border-none" asChild>
                             <Link href="https://forms.gle/csJR7npkCiAQnmrS8" target="_blank" rel="noopener noreferrer">
                                 Register Now
                             </Link>
                         </Button>
-                        <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm" asChild>
+                        <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg font-bold border-pink-200 text-pink-700 hover:bg-pink-100 md:bg-white/10 md:text-white md:border-white/30 md:hover:bg-white/20 backdrop-blur-sm" asChild>
                             <Link href="#">
                                 Become a Sponsor
                             </Link>
@@ -153,10 +156,8 @@ export default function MissPinkRibbonPage() {
                                             <li>Complete the Official Registration Form (available online or at County offices).</li>
                                             <li>
                                                 <strong>Pay Required Fees:</strong>
-                                                <ul className="list-disc pl-5 mt-2 space-y-1">
-                                                    <li>Form Fee: Ksh 50 (non-refundable)</li>
-                                                    <li>Registration Fee: Ksh 1,000</li>
-                                                    <li>Photo Shoot Fee: Ksh 1,000 (includes portfolio session)</li>
+                                                <ul className="list-disc pl-5 mt-2 space-y-1 whitespace-normal">
+                                                    <li>Registration Fee: Ksh <b>200</b> <i>    (To sponsor Heal the Future Climate Action Program Schools Program plant one Oil Tree)</i></li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -289,6 +290,33 @@ export default function MissPinkRibbonPage() {
                             <div>
                                 <h4 className="font-bold text-xl mb-2 text-gray-900">Online</h4>
                                 <p className="text-muted-foreground">www.misspinkribbonkenya.org</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <Instagram className="h-8 w-8 text-pink-600" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Instagram</h4>
+                                <p className="text-muted-foreground"><Link href="https://www.instagram.com/misspinkribbonkenya?igsh=MWNoemVqbTJvaDhpYw%3D%3D&utm_source=qr">@misspinkribbonkenya</Link></p>
+                            </div>
+                        </div>
+                        {/* <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <Facebook className="h-8 w-8 text-pink-600" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Facebook</h4>
+                                <p className="text-muted-foreground"><Link href="https://www.facebook.com/share/17eKxBwRXy/?mibextid=wwXIfr">@misspinkribbonkenya</Link></p>
+                            </div>
+                        </div> */}
+                        <div className="flex flex-col items-center gap-6 group hover:-translate-y-2 transition-transform duration-300">
+                            <div className="h-20 w-20 rounded-full bg-pink-50 flex items-center justify-center group-hover:bg-pink-100 transition-colors">
+                                <Facebook className="h-8 w-8 text-pink-600" />
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-xl mb-2 text-gray-900">Facebook</h4>
+                                <p className="text-muted-foreground"><Link href="https://www.facebook.com/share/17eKxBwRXy/?mibextid=wwXIfr">@misspinkribbonkenya</Link></p>
                             </div>
                         </div>
                     </div>

@@ -74,7 +74,7 @@ export default function ProgramsPage() {
             name: 'MISS PINK RIBBON Kenya',
             desc: "Promoting breast cancer awareness and women's health through elegance.",
             icon: <Heart className="h-6 w-6 text-pink-600" />,
-            href: '/initiatives/miss-pink-ribbon',
+            href: '/miss-pink-ribbon',
             color: 'bg-pink-50'
           }
         ]}
