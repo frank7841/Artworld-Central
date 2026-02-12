@@ -9,7 +9,7 @@ import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, 
 import { ExploreMore } from '@/components/layout/ExploreMore';
 
 const allPrograms = [
-  { id: 'pink-ribbon', name: 'MISS PINK RIBBON Kenya', tag: 'Advocacy', icon: <Heart /> },
+  { id: 'miss-pink-ribbon', name: 'MISS PINK RIBBON Kenya', tag: 'Advocacy', icon: <Heart /> },
   { id: 'kacdp', name: 'KACDP', tag: 'Creative', icon: <Palette /> },
   { id: 'nifa', name: 'Nairobi Festival of Arts NFA', tag: 'Arts', icon: <Zap /> },
   { id: 'kikaoo', name: 'KIKAOO AWARDS', tag: 'Media', icon: <Film /> },
@@ -40,7 +40,7 @@ export default function ProgramsPage() {
               <CardContent className="space-y-4">
                 <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">{program.name}</CardTitle>
                 <Button variant="outline" size="sm" className="w-full font-bold" asChild>
-                  <Link href={`/programs/${program.id}`}>View Details</Link>
+                  <Link href={`/${program.id}`}>View Details</Link>
                 </Button>
               </CardContent>
             </Card>

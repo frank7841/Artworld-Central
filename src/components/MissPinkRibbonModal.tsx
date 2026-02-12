@@ -66,6 +66,7 @@ export function MissPinkRibbonModal() {
                     </div>
                 </div>
             </DialogContent>
+            
         </Dialog>
     );
 }
