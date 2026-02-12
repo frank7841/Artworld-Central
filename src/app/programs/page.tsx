@@ -40,7 +40,7 @@ export default function ProgramsPage() {
               <CardContent className="space-y-4">
                 <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">{program.name}</CardTitle>
                 <Button variant="outline" size="sm" className="w-full font-bold" asChild>
-                  <Link href={`/${program.id}`}>View Details</Link>
+                  <Link href={`initiatives/${program.id}`}>View Details</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -55,7 +55,7 @@ export default function ProgramsPage() {
         items={[
           {
             id: 'nifa',
-            name: 'Nairobi Festival of Arts NFA',
+            name: 'Nairobi Festival of Arts (NFA)',
             desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
             icon: <Zap className="h-6 w-6 text-primary" />,
             href: '/initiatives/nifa',
@@ -74,7 +74,7 @@ export default function ProgramsPage() {
             name: 'MISS PINK RIBBON Kenya',
             desc: "Promoting breast cancer awareness and women's health through elegance.",
             icon: <Heart className="h-6 w-6 text-pink-600" />,
-            href: '/miss-pink-ribbon',
+            href: 'initiatives/miss-pink-ribbon',
             color: 'bg-pink-50'
           }
         ]}
