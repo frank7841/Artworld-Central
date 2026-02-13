@@ -17,8 +17,8 @@ export default function InitiativesPage() {
         },
         {
             id: 'kikaoo-awards',
-            name: 'KIKAOO AWARDS',
-            desc: 'The KIKAOO Awards celebrate excellence in film, storytelling, and creative expression, recognizing outstanding artists, filmmakers, and cultural contributors from Kenya and beyond.',
+            name: 'KIKAOO Awards incorporating Nairobi Film Festival',
+            desc: 'The KIKAOO Awards celebrate excellence in film, storytelling, and creative expression, recognizing outstanding artists, filmmakers, and cultural contributors from Kenya and beyond, incorporating the Nairobi Film Festival.',
             icon: <Trophy className="h-6 w-6 text-primary" />,
             href: '/initiatives/kikaoo-awards',
             color: 'bg-amber-50'
@@ -79,14 +79,7 @@ export default function InitiativesPage() {
             href: '/initiatives/artworld-institute',
             color: 'bg-blue-50'
         },
-        {
-            id: 'nairobi-film-festival',
-            name: 'Nairobi Film Festival',
-            desc: 'Nairobi Film Festival is a platform for showcasing powerful local and international films that reflect social realities, cultural identity, and innovative storytelling.',
-            icon: <Clapperboard className="h-6 w-6 text-red-600" />,
-            href: '/initiatives/nairobi-film-festival',
-            color: 'bg-red-50'
-        },
+
         {
             id: 'nairobi-pop-life',
             name: 'NAIROBI POP LIFE',

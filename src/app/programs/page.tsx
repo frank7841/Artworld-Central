@@ -12,7 +12,7 @@ const allPrograms = [
   { id: 'miss-pink-ribbon', name: 'MISS PINK RIBBON Kenya', tag: 'Advocacy', icon: <Heart /> },
   { id: 'kacdp', name: 'KACDP', tag: 'Creative', icon: <Palette /> },
   { id: 'nifa', name: 'Nairobi Festival of Arts NFA', tag: 'Arts', icon: <Zap /> },
-  { id: 'kikaoo', name: 'KIKAOO AWARDS', tag: 'Media', icon: <Film /> },
+  { id: 'kikaoo-awards', name: 'KIKAOO Awards incorporating Nairobi Film Festival', tag: 'Media', icon: <Film /> },
   { id: 'pop-life', name: 'NAIROBI POP LIFE', tag: 'Culture', icon: <Star /> },
   { id: 'book-week', name: 'KIKAOO NATIONAL BOOK WEEK', tag: 'Literature', icon: <Book /> },
   { id: 'transport-awards', name: 'Kenya NATIONAL TRANSPORT and Safety AWARDS', tag: 'Community', icon: <Truck /> },
@@ -63,8 +63,8 @@ export default function ProgramsPage() {
           },
           {
             id: 'kikaoo-awards',
-            name: 'KIKAOO AWARDS',
-            desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
+            name: 'KIKAOO Awards incorporating Nairobi Film Festival',
+            desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya, incorporating the Nairobi Film Festival.',
             icon: <Trophy className="h-6 w-6 text-primary" />,
             href: '/initiatives/kikaoo-awards',
             color: 'bg-amber-50'

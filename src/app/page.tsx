@@ -16,20 +16,20 @@ export default function Home() {
   const featuredPrograms = [
     {
       id: 'nifa',
-      name: 'Nairobi Festival of Arts (NFA',
+      name: 'Nairobi Festival of Arts (NFA)',
       tag: 'Festival',
       desc: 'Multidisciplinary cultural festival celebrating visual arts, performance, and music.',
-      icon: <Zap className="h-5 w-5 text-primary" />,
+      icon: <Zap className="h-5 w-5 text-white" />,
       img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl || '',
       href: '/programs/festivals'
     },
     {
       id: 'kikaoo-awards',
-      name: 'KIKAOO AWARDS',
+      name: 'KIKAOO Awards',
       tag: 'Excellence',
-      desc: 'Celebrating excellence in film, storytelling, and creative expression from Kenya.',
-      icon: <Trophy className="h-5 w-5 text-primary" />,
-      img: 'https://unsplash.com/photos/a-glass-vase-sitting-on-top-of-a-table-Lu0oB7yoGV0',
+      desc: 'The KIKAOO Awards celebrate excellence in film, storytelling, and creative expression, recognizing outstanding artists, filmmakers, and cultural contributors from Kenya and beyond.',
+      icon: <Trophy className="h-5 w-5 text-white" />,
+      img: 'https://images.unsplash.com/photo-1585647347483-22b66260dfff?q=80&w=800',
       href: '/initiatives/kikaoo-awards'
     },
     {
@@ -37,7 +37,7 @@ export default function Home() {
       name: 'Heal the Future Climate Action Program',
       tag: 'Climate Action',
       desc: 'Arts-led climate action initiative empowering youth to address environmental challenges.',
-      icon: <Leaf className="h-5 w-5 text-primary" />,
+      icon: <Leaf className="h-5 w-5 text-white" />,
       img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800',
       href: '/initiatives/heal-future'
     },
@@ -46,7 +46,7 @@ export default function Home() {
       name: 'MISS PINK RIBBON Kenya',
       tag: 'Advocacy',
       desc: 'Promoting breast cancer awareness and women’s health through elegance.',
-      icon: <Heart className="h-5 w-5 text-primary" />,
+      icon: <Heart className="h-5 w-5 text-white" />,
       img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl || '',
       href: '/initiatives/miss-pink-ribbon'
     }
@@ -135,31 +135,35 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {featuredPrograms.map((program) => (
-              <Card key={program.id} className="overflow-hidden group hover:shadow-xl transition-all border-none rounded-2xl md:rounded-3xl">
-                <div className="relative h-48 md:h-64 overflow-hidden">
+              <Link key={program.id} href={program.href}>
+                <Card className="overflow-hidden group hover:shadow-2xl transition-all border-none rounded-2xl md:rounded-[32px] relative h-[400px] md:h-[500px]">
                   <Image
                     src={program.img || ''}
                     alt={program.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-[0.7] group-hover:brightness-[0.4]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <Badge className="absolute top-4 right-4 bg-primary text-secondary font-bold">
-                    {program.tag}
-                  </Badge>
-                </div>
-                <CardContent className="p-6 pt-4">
-                  <p className="flex items-center gap-2 font-bold text-lg mb-6"><span className="mr-2">{program.icon}</span>{program.name}</p>
-                  <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                    {program.desc}
-                  </p>
-                  <Button variant="secondary" className="w-full font-bold group" asChild>
-                    <Link href={program.href}>
-                      Explore Program
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end space-y-4">
+                    <Badge className="w-fit bg-primary text-secondary font-bold text-xs uppercase tracking-widest px-3 py-1">
+                      {program.tag}
+                    </Badge>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-white/10 backdrop-blur-md rounded-lg border border-white/10">
+                        {program.icon}
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-headline font-bold text-white leading-tight">{program.name}</h3>
+                    </div>
+                    <p className="text-white/80 text-sm md:text-base leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                      {program.desc}
+                    </p>
+                    <div className="pt-4 flex items-center text-primary font-bold text-sm tracking-wide group-hover:translate-x-2 transition-transform">
+                      EXPLORE PROGRAM < Zap className="ml-2 h-4 w-4 fill-primary" />
+                    </div>
+                  </div>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
