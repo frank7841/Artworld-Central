@@ -34,9 +34,9 @@ export default function Home() {
     },
     {
       id: 'heal-future',
-      name: 'Heal the Future Climate Action Program',
+      name: 'Heal the Future Climate Action Program – Schools Program',
       tag: 'Climate Action',
-      desc: 'Arts-led climate action initiative empowering youth to address environmental challenges.',
+      desc: 'School-based environmental stewardship, regenerative agriculture, and youth leadership initiative.',
       icon: <Leaf className="h-5 w-5 text-white" />,
       img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800',
       href: '/initiatives/heal-future'

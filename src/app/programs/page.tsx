@@ -16,6 +16,7 @@ const allPrograms = [
   { id: 'pop-life', name: 'NAIROBI POP LIFE', tag: 'Culture', icon: <Star /> },
   { id: 'book-week', name: 'KIKAOO NATIONAL BOOK WEEK', tag: 'Literature', icon: <Book /> },
   { id: 'transport-awards', name: 'Kenya NATIONAL TRANSPORT and Safety AWARDS', tag: 'Community', icon: <Truck /> },
+  { id: 'heal-future', name: 'Heal the Future Climate Action – Schools Program', tag: 'Climate Action', icon: <Leaf /> },
   { id: 'fashion-runway', name: 'AWI Fashion Runway', tag: 'Fashion', icon: <Briefcase /> },
   { id: 'castreal-agency', name: 'CastReal Agency', tag: 'Talent', icon: <Users /> },
 ];
@@ -77,6 +78,14 @@ export default function ProgramsPage() {
             icon: <Heart className="h-6 w-6 text-pink-600" />,
             href: 'initiatives/miss-pink-ribbon',
             color: 'bg-pink-50'
+          },
+          {
+            id: 'heal-future',
+            name: 'Heal the Future Climate Action – Schools Program',
+            desc: 'School-based environmental stewardship, regenerative agriculture, and youth leadership initiative.',
+            icon: <Leaf className="h-6 w-6 text-green-600" />,
+            href: '/initiatives/heal-future',
+            color: 'bg-green-50'
           }
         ]}
       />

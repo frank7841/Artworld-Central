@@ -33,8 +33,8 @@ export default function InitiativesPage() {
         },
         {
             id: 'heal-future',
-            name: 'Heal the Future Climate Action Program',
-            desc: 'Heal the Future is an arts-led climate action initiative that empowers schools, youth, and communities to address environmental challenges through creative education, awareness campaigns, and sustainable practices.',
+            name: 'Heal the Future Climate Action Program – Schools Program',
+            desc: 'A school-based initiative empowering learners to become climate champions through regenerative agriculture, tree growing, and leadership.',
             icon: <Leaf className="h-6 w-6 text-green-600" />,
             href: '/initiatives/heal-future',
             color: 'bg-green-50'
