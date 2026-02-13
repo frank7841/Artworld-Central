@@ -58,7 +58,7 @@ export default function InitiativesPage() {
         {
             id: 'castreal-agency',
             name: 'CastReal Agency',
-            desc: 'CastReal Agency is a professional talent and casting agency connecting models, actors, and performers with opportunities in film, fashion, advertising, and creative productions.',
+            desc: 'CastReal Agency is a professional talent and casting hub dedicated to discovering, developing, and deploying exceptional models and performers for world-class productions.',
             icon: <Users className="h-6 w-6 text-violet-600" />,
             href: '/initiatives/castreal-agency',
             color: 'bg-violet-50'
