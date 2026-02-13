@@ -10,15 +10,16 @@ import { ExploreMore } from '@/components/layout/ExploreMore';
 
 const allPrograms = [
   { id: 'miss-pink-ribbon', name: 'MISS PINK RIBBON Kenya', tag: 'Advocacy', icon: <Heart /> },
+  { id: 'kikaoo-awards', name: 'KIKAOO Awards incorporating Nairobi Film Festival', tag: 'Media', icon: <Film /> },
+  { id: 'castreal-agency', name: 'CastReal Agency', tag: 'Talent', icon: <Users /> },
+  { id: 'heal-future', name: 'Heal the Future Climate Action – Schools Program', tag: 'Climate Action', icon: <Leaf /> },
   { id: 'kacdp', name: 'KACDP', tag: 'Creative', icon: <Palette /> },
   { id: 'nifa', name: 'Nairobi Festival of Arts NFA', tag: 'Arts', icon: <Zap /> },
-  { id: 'kikaoo-awards', name: 'KIKAOO Awards incorporating Nairobi Film Festival', tag: 'Media', icon: <Film /> },
   { id: 'pop-life', name: 'NAIROBI POP LIFE', tag: 'Culture', icon: <Star /> },
   { id: 'book-week', name: 'KIKAOO NATIONAL BOOK WEEK', tag: 'Literature', icon: <Book /> },
   { id: 'transport-awards', name: 'Kenya NATIONAL TRANSPORT and Safety AWARDS', tag: 'Community', icon: <Truck /> },
-  { id: 'heal-future', name: 'Heal the Future Climate Action – Schools Program', tag: 'Climate Action', icon: <Leaf /> },
   { id: 'fashion-runway', name: 'AWI Fashion Runway', tag: 'Fashion', icon: <Briefcase /> },
-  { id: 'castreal-agency', name: 'CastReal Agency', tag: 'Talent', icon: <Users /> },
+
 ];
 
 export default function ProgramsPage() {
@@ -56,11 +57,11 @@ export default function ProgramsPage() {
         description="Explore our high-impact projects driving social change and creative excellence across Kenya."
         items={[
           {
-            id: 'nifa',
-            name: 'Nairobi Festival of Arts (NFA)',
-            desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
-            icon: <Zap className="h-6 w-6 text-primary" />,
-            href: '/initiatives/nifa',
+            id: 'castreal-agency',
+            name: 'CastReal Agency',
+            desc: "Discover your potential with Kenya's premier talent and casting hub.We bridge the gap between exceptional artists and world- class productions.",
+            icon: <Users className="h-6 w-6 text-primary" />,
+            href: '/initiatives/castreal-agency',
             color: 'bg-blue-50'
           },
           {

@@ -15,13 +15,14 @@ export default function Home() {
 
   const featuredPrograms = [
     {
-      id: 'nifa',
-      name: 'Nairobi Festival of Arts (NFA)',
-      tag: 'Festival',
-      desc: 'Multidisciplinary cultural festival celebrating visual arts, performance, and music.',
-      icon: <Zap className="h-5 w-5 text-white" />,
-      img: PlaceHolderImages.find(i => i.id === 'program-nifa')?.imageUrl || '',
-      href: '/programs/festivals'
+      id: 'castreal-agency',
+      name: 'CastReal Agency',
+      tag: 'Advocasy',
+      desc: "Discover your potential with Kenya's premier talent and casting hub.We bridge the gap between exceptional artists and world- class productions.",
+      icon: <Users className="h-6 w-6 text-white" />,
+      img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200',
+      href: '/initiatives/castreal-agency',
+      color: 'bg-blue-50'
     },
     {
       id: 'kikaoo-awards',

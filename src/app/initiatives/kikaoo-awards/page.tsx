@@ -35,7 +35,7 @@ export default function KikaooAwardsPage() {
 
                 <div className="container mx-auto px-4 relative z-20 text-center space-y-6">
                     <Badge variant="outline" className="border-amber-500 text-amber-400 px-4 py-1 mb-4 text-sm md:text-base uppercase tracking-widest">
-                        Official Call for Films (Updated)
+                        Official Call for Films
                     </Badge>
                     <h1 className="font-headline text-4xl sm:text-6xl md:text-8xl font-bold leading-tight text-white mb-2">
                         KIKAOO <span className="text-amber-500">AWARDS</span>
