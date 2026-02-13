@@ -72,11 +72,11 @@ export default function InitiativesPage() {
             color: 'bg-rose-50'
         },
         {
-            id: 'artworld-institute',
-            name: 'ArtWorld Institute',
-            desc: 'ArtWorld Institute is a premier arts training and research institution dedicated to nurturing creativity, advancing cultural knowledge, and shaping future artistic leaders through education, innovation, and community engagement.',
+            id: 'academy',
+            name: 'ArtWorld Institute AWI',
+            desc: 'AWI (Incorporating ArtWorld Media Centre) is our premier creative arts training hub, dedicated to professional excellence across the industry value chain.',
             icon: <GraduationCap className="h-6 w-6 text-blue-800" />,
-            href: '/initiatives/artworld-institute',
+            href: '/academy',
             color: 'bg-blue-50'
         },
 
@@ -178,9 +178,9 @@ export default function InitiativesPage() {
                 title="Our Core Programs"
                 description="Join our specialized communities and gain access to resources, mentorship, and professional growth."
                 items={[
+                    { id: 'academy', name: 'AWI Institute', desc: 'Master training programs across ten specialist creative schools.', icon: <GraduationCap />, href: '/academy', color: 'bg-muted/50' },
                     { id: 'arts-ed', name: 'Arts Education', desc: 'Practical workshops in fine arts, digital media, and performance.', icon: <Palette />, href: '/programs/arts-education', color: 'bg-muted/50' },
                     { id: 'festivals', name: 'Festivals & Events', desc: 'Showcasing the best of Kenyan and African creativity to the world.', icon: <Zap />, href: '/programs/festivals', color: 'bg-muted/50' },
-                    { id: 'schools', name: 'Schools Programs', desc: 'Bringing the arts to the classroom through workshops and competitions.', icon: <Book />, href: '/programs/schools', color: 'bg-muted/50' }
                 ]}
             />
         </div>

@@ -41,7 +41,7 @@ export function Navbar() {
         { name: 'Community Engagement', href: '/programs/community' },
         { name: 'Research & Writing', href: '/programs/research' },
         { name: 'Schools Programs', href: '/programs/schools' },
-        { name: 'Learning Academy', href: '/academy' },
+        { name: 'AWI Institute/Academy', href: '/academy' },
       ]
     },
     { name: 'Initiatives', href: '/initiatives' },

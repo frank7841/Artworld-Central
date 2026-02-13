@@ -1,250 +1,347 @@
 'use client';
 
-import { Navbar } from '@/components/navigation/navbar';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Input } from '@/components/ui/input';
-import { Play, Clock, Star, BookOpen, GraduationCap, Users, Search, Filter, ArrowRight, Zap } from 'lucide-react';
-import Image from 'next/image';
+import {
+  Film,
+  Tv,
+  Theater,
+  Palette,
+  Shirt,
+  Monitor,
+  Scissors,
+  Sparkles,
+  Coffee,
+  Briefcase,
+  BookOpen,
+  CheckCircle2,
+  ArrowRight,
+  Zap,
+  Star,
+  Users,
+  Award,
+  ChevronRight
+} from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const courses = [
-  {
-    id: 1,
-    title: 'Leadership in Social Advocacy',
-    category: 'Leadership',
-    duration: '4h 30m',
-    level: 'Beginner',
-    rating: 4.8,
-    students: 1240,
-    img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800',
-    lecturer: 'Dr. Sarah M.'
-  },
-  {
-    id: 2,
-    title: 'Creative Career Management',
-    category: 'Career',
-    duration: '6h 15m',
-    level: 'Intermediate',
-    rating: 4.9,
-    students: 850,
-    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800',
-    lecturer: 'James K.'
-  },
-  {
-    id: 3,
-    title: 'Arts & Festival Operations',
-    category: 'Management',
-    duration: '5h 45m',
-    level: 'Advanced',
-    rating: 4.7,
-    students: 420,
-    img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800',
-    lecturer: 'Amina W.'
-  },
-  {
-    id: 4,
-    title: 'Community Health Leadership',
-    category: 'Health',
-    duration: '3h 20m',
-    level: 'Beginner',
-    rating: 4.9,
-    students: 2100,
-    img: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800',
-    lecturer: 'Prof. David O.'
-  },
+const schools = [
+  { name: 'Film School', icon: <Film className="h-6 w-6" />, color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'Media School', icon: <Tv className="h-6 w-6" />, color: 'bg-purple-500/10 text-purple-600' },
+  { name: 'Theatre Arts School', icon: <Theater className="h-6 w-6" />, color: 'bg-red-500/10 text-red-600' },
+  { name: 'Fine Art School', icon: <Palette className="h-6 w-6" />, color: 'bg-orange-500/10 text-orange-600' },
+  { name: 'Fashion School', icon: <Shirt className="h-6 w-6" />, color: 'bg-pink-500/10 text-pink-600' },
+  { name: 'Graphic Design & IT School', icon: <Monitor className="h-6 w-6" />, color: 'bg-indigo-500/10 text-indigo-600' },
+  { name: 'Hair Dressing School', icon: <Scissors className="h-6 w-6" />, color: 'bg-emerald-500/10 text-emerald-600' },
+  { name: 'Beauty School', icon: <Sparkles className="h-6 w-6" />, color: 'bg-yellow-500/10 text-yellow-600' },
+  { name: 'Hospitality, Languages & Tuition', icon: <Coffee className="h-6 w-6" />, color: 'bg-stone-500/10 text-stone-600' },
+  { name: 'Business & Management School', icon: <Briefcase className="h-6 w-6" />, color: 'bg-cyan-500/10 text-cyan-600' },
+];
+
+const modules = [
+  { id: 1, title: 'Introduction to the Institute', desc: 'Understanding philosophy, ethics and program expectations.' },
+  { id: 2, title: 'Fundamentals of Film', desc: 'Film production process, roles, media & society, ratings & audience awareness.' },
+  { id: 3, title: 'Screenwriting & Genres', desc: 'Script-to-screen process, storyboarding, formatting, budgeting & scheduling.' },
+  { id: 4, title: 'Conceptualization', desc: 'Logframes, planning, and pre-production logistics.' },
+  { id: 5, title: 'Production Team Skills', desc: 'Workflow management (Dev vs Prod vs Post) and crew management.' },
+  { id: 6, title: 'Technical Mastery', desc: 'Camera, Lighting, Sound, Editing, Special Effects, and Green Screen.' },
+  { id: 7, title: 'Industry & Careers', desc: 'Career pathways and creative industry structures.' },
+  { id: 8, title: 'Management & Marketing', desc: 'Budgeting, PR, Freelance life, and Film critique.' },
 ];
 
 export default function AcademyPage() {
   return (
-    <div className="bg-[#F8F9FA]">
-
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-primary overflow-hidden py-24">
-        {/* Abstract Background Elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/10 -skew-x-12 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full -translate-x-1/2 translate-y-1/2"></div>
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10" />
+          <Image
+            src="https://images.unsplash.com/photo-1492691523567-3075677aa163?q=80&w=2000"
+            alt="ArtWorld Academy Hero"
+            fill
+            className="object-cover opacity-60"
+            priority
+          />
+        </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <Badge className="bg-secondary text-primary font-bold mb-6 px-4 py-1.5 uppercase tracking-wider text-xs border-none">
-              AWI Academy
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 font-headline tracking-tight leading-tight">
-              Master the Art of <span className="text-secondary italic">Creative Impact</span>
-            </h1>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed font-medium">
-              Upskill with masterclasses from industry pioneers. Earn certified digital badges and build a portfolio that stands out.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-ivory hover:scale-105 transition-all font-bold px-8 h-14 rounded-2xl">
-                Explore Courses
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="max-w-4xl space-y-8">
+            <div className="space-y-4">
+              <Badge className="bg-primary text-white hover:bg-primary/90 px-4 py-1.5 uppercase tracking-widest text-xs border-none animate-in fade-in slide-in-from-left duration-500">
+                ArtWorld Institute AI
+              </Badge>
+              <h1 className="text-5xl md:text-7xl font-headline font-extrabold text-white leading-[1.1] animate-in fade-in slide-in-from-left duration-700 delay-100">
+                ArtWorld Institute AWI <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-400">
+                  (Incorporating ArtWorld Media Centre)
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-left duration-700 delay-200 font-medium">
+                Developing professional excellence across the Creative Industry value chain.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom duration-700 delay-300">
+              <Button size="xl" className="font-bold rounded-full px-8 h-14 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20">
+                Explore Programs
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white/30 text-primary hover:bg-white/10 font-bold px-8 h-14 rounded-2xl">
-                <BookOpen className="mr-2 h-5 w-5" /> My Learning
+              <Button size="xl" variant="outline" className="font-bold rounded-full px-8 h-14 border-white/20 text-white hover:bg-white/10 backdrop-blur-sm">
+                Apply Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-white/10 animate-in fade-in slide-in-from-bottom duration-700 delay-500">
+              <div>
+                <div className="text-3xl font-bold text-white">6 Months</div>
+                <div className="text-slate-400 text-sm font-semibold uppercase tracking-wider">Short Courses</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">12 Months</div>
+                <div className="text-slate-400 text-sm font-semibold uppercase tracking-wider">Certificates</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">18 Months</div>
+                <div className="text-slate-400 text-sm font-semibold uppercase tracking-wider">Diplomas</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-16">
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          {[
-            { label: 'Courses', value: '150+', icon: <Play className="h-5 w-5" /> },
-            { label: 'Students', value: '12k+', icon: <Users className="h-5 w-5" /> },
-            { label: 'Mentors', value: '45+', icon: <Star className="h-5 w-5" /> },
-            { label: 'Badges Issued', value: '8.5k', icon: <GraduationCap className="h-5 w-5" /> },
-          ].map((stat) => (
-            <div key={stat.label} className="bg-white p-6 rounded-3xl shadow-sm border border-muted/20 flex flex-col items-center text-center group hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                {stat.icon}
+      {/* Executive Summary */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs">
+                <span className="w-12 h-px bg-primary opacity-30" />
+                Executive Summary
               </div>
-              <div className="text-2xl font-bold font-headline">{stat.value}</div>
-              <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">
+                Transforming Raw Talent into <br />
+                <span className="text-primary">Industry-Standard Professionals</span>
+              </h2>
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
+                <p>
+                  ArtWorld Institute AI is a premier creative arts training and research institution dedicated to developing professional excellence across the Creative Industry value chain.
+                </p>
+                <div className="bg-white p-8 rounded-[32px] border border-slate-200 shadow-sm space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <Zap className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Intensive & Immersive</h4>
+                      <p className="text-sm">Structured as creative "boot camps" designed for rapid growth and technical mastery.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Industry Mentorship</h4>
+                      <p className="text-sm">Learn in a studio-based environment mentored by accomplished professionals.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
 
-        {/* Filter & Search */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-12">
-          <div className="relative w-full lg:max-w-md">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              placeholder="What do you want to learn today?"
-              className="pl-12 h-14 bg-white border-none shadow-sm rounded-2xl text-lg"
-            />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/5 rounded-[40px] -rotate-2" />
+              <Card className="relative overflow-hidden border-none shadow-2xl rounded-[32px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800"
+                  alt="Students collaborating"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-slate-950 to-transparent">
+                  <p className="text-white text-lg font-bold italic">
+                    "Great creative work is made with intention, vision, discipline and responsibility."
+                  </p>
+                </div>
+              </Card>
+            </div>
           </div>
-          <div className="flex gap-3 overflow-x-auto pb-2 w-full lg:w-auto">
-            <Button variant="ghost" className="font-bold text-primary bg-primary/5 rounded-2xl h-12 px-6">
-              <Filter className="mr-2 h-4 w-4" /> All Categories
-            </Button>
-            {['Leadership', 'Management', 'Creative Arts', 'Media'].map((cat) => (
-              <Button key={cat} variant="outline" className="h-12 border-none bg-white shadow-sm rounded-2xl font-bold hover:bg-muted">
-                {cat}
-              </Button>
+        </div>
+      </section>
+
+      {/* The Schools */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <Badge variant="outline" className="border-primary text-primary font-bold px-4 py-1 uppercase tracking-widest text-xs">
+              Specializations
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold">Our Ten Specialist Schools</h2>
+            <p className="text-slate-500 text-lg font-medium leading-relaxed">
+              Tailored learning pathways designed to cover every aspect of the creative and professional ecosystem.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {schools.map((school) => (
+              <div key={school.name} className="group p-8 rounded-[32px] border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center space-y-6">
+                <div className={`w-16 h-16 rounded-2xl ${school.color} flex items-center justify-center mx-auto group-hover:scale-110 transition-transform`}>
+                  {school.icon}
+                </div>
+                <h3 className="font-bold text-slate-900 leading-tight group-hover:text-primary transition-colors">{school.name}</h3>
+              </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Course Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {courses.map((course) => (
-            <Card key={course.id} className="overflow-hidden border-none shadow-sm group hover:shadow-xl transition-all duration-500 flex flex-col rounded-3xl bg-white">
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={course.img}
-                  alt={course.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-lg animate-in zoom-in-50">
-                    <Play className="h-6 w-6 text-primary fill-current" />
-                  </div>
-                </div>
-                <Badge className="absolute top-4 left-4 bg-white/90 text-primary font-bold backdrop-blur-sm border-none shadow-sm">
-                  {course.category}
-                </Badge>
-              </div>
-              <CardHeader className="p-6 flex-grow">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="flex items-center gap-1 text-xs font-bold text-yellow-500">
-                    <Star className="h-3.5 w-3.5 fill-current" />
-                    {course.rating}
-                  </div>
-                  <span className="text-xs text-muted-foreground font-medium">({course.students} students)</span>
-                </div>
-                <CardTitle className="text-xl font-bold font-headline mb-4 group-hover:text-primary transition-colors leading-tight">
-                  {course.title}
-                </CardTitle>
-                <div className="flex items-center gap-4 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                  <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" /> {course.duration}</span>
-                  <span className="flex items-center gap-1.5"><Zap className="h-4 w-4" /> {course.level}</span>
-                </div>
-              </CardHeader>
-              <CardFooter className="p-6 pt-0 border-t mt-4 flex justify-between items-center bg-muted/5">
-                <div className="flex items-center gap-2">
-                  <Avatar className="h-8 w-8 ring-2 ring-white">
-                    <AvatarImage src={`https://i.pravatar.cc/150?u=${course.id}`} />
-                    <AvatarFallback>I</AvatarFallback>
-                  </Avatar>
-                  <span className="text-sm font-bold truncate max-w-[100px]">{course.lecturer}</span>
-                </div>
-                <Button variant="ghost" className="p-0 h-auto font-bold text-primary group-hover:translate-x-1 transition-transform">
-                  Enroll <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-
-        {/* Featured Mentorship Section */}
-        <section className="relative rounded-[40px] overflow-hidden bg-primary shadow-2xl">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200"
-              fill
-              alt="Mentorship BG"
-              className="object-cover"
-            />
-          </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10 px-8 py-16 md:px-16">
-            <div className="space-y-8">
-              <Badge className="bg-secondary text-primary font-extrabold px-5 py-2 uppercase tracking-widest text-[10px] border-none">
-                Exclusive Access
+      {/* Course Structure - Modules */}
+      <section className="py-24 bg-slate-950 text-white overflow-hidden">
+        <div className="container mx-auto px-4 relative">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
+              <Badge className="bg-secondary text-primary font-extrabold px-4 py-1.5 uppercase tracking-widest text-[10px] border-none">
+                Master Training Structure
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white font-headline leading-tight">
-                Unlock 1-on-1 <br />
-                <span className="text-secondary italic">Strategic Mentorship</span>
+              <h2 className="text-4xl md:text-6xl font-headline font-bold leading-tight">
+                8 Progressive <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-400 italic">Modules</span>
               </h2>
-              <p className="text-lg text-white/70 leading-relaxed font-medium">
-                Connect with global industry experts for personalized coaching sessions.
-                Artworld Institute Premium members unlock exclusive access to top-tier curators, managers, and advocates.
+              <p className="text-slate-400 text-lg leading-relaxed font-medium">
+                Our curriculum is built to take applicants from foundational theory to technical mastery and professional readiness.
               </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <div className="flex -space-x-4">
-                  {[1, 2, 3, 4, 5].map(i => (
-                    <Avatar key={i} className="border-4 border-primary h-14 w-14 ring-2 ring-secondary/20">
-                      <AvatarImage src={`https://i.pravatar.cc/150?u=mentor-${i}`} />
-                      <AvatarFallback>M</AvatarFallback>
-                    </Avatar>
-                  ))}
-                  <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-xs border-4 border-primary">
-                    +40
+
+              <div className="space-y-4 pt-8">
+                {["Intention-driven design", "Vision-focused execution", "Professional discipline", "Social responsibility"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-secondary" />
+                    <span className="text-slate-300 font-bold text-sm uppercase tracking-wide">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 grid gap-4">
+              {modules.map((mod) => (
+                <div key={mod.id} className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex gap-6 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-secondary font-black text-xl shrink-0">
+                    {mod.id}
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold font-headline text-white">{mod.title}</h4>
+                    <p className="text-slate-400 font-medium leading-relaxed">{mod.desc}</p>
                   </div>
                 </div>
-                <div>
-                  <div className="text-white font-bold text-xl leading-none">Global Network</div>
-                  <div className="text-white/50 text-sm font-medium">Top industry leaders</div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Study Here & Industry Connections */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5 space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-headline font-bold">Why Study at AWI?</h2>
+                <div className="grid sm:grid-cols-2 gap-4 pt-6">
+                  {[
+                    "Small class sizes",
+                    "Hands-on studio training",
+                    "Industry Mentorship",
+                    "Internship placement",
+                    "Job placement pipeline",
+                    "Industry partnerships"
+                  ].map((benefit) => (
+                    <div key={benefit} className="flex items-center gap-2 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-colors">
+                      <Star className="h-4 w-4 text-primary fill-primary" />
+                      <span className="font-bold text-slate-700 text-sm whitespace-nowrap">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <Button size="lg" className="bg-secondary text-primary hover:bg-white hover:scale-105 transition-all font-extrabold px-10 h-16 rounded-2xl shadow-xl">
-                Apply for Mentorship
-              </Button>
-            </div>
-            <div className="relative h-full min-h-[400px] hidden lg:block rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800"
-                alt="Coaching Session"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-              <div className="absolute bottom-10 left-10 right-10 p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
-                <p className="text-white font-bold italic text-lg mb-4">
-                  "The mentorship at Artworld Institute transformed the way I approach international collaborations."
+
+              <div className="p-8 rounded-[40px] bg-primary text-white space-y-6 shadow-2xl shadow-primary/20">
+                <Award className="h-12 w-12 text-secondary" />
+                <h3 className="text-2xl font-bold font-headline">Go Further</h3>
+                <p className="text-white/80 font-medium leading-relaxed">
+                  Through ArtWorld Media Centre and Media Kreative Films, ArtWorld Institute operates as a training-to-employment ecosystem.
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="font-bold text-secondary">Anita M.</div>
-                  <div className="text-white/60 text-sm font-medium">— Creative Director, Nairobi Arts</div>
+                <div className="flex gap-4 pt-4">
+                  <div className="px-5 py-2 rounded-full border border-white/20 bg-white/10 text-xs font-bold uppercase tracking-wider">Media Kreative</div>
+                  <div className="px-5 py-2 rounded-full border border-white/20 bg-white/10 text-xs font-bold uppercase tracking-wider">AWI Media Centre</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 pl-0 lg:pl-12">
+              <div className="grid gap-8">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-headline font-bold">Admissions & Requirements</h3>
+                  <p className="text-slate-500 font-medium">Admission is based on academic background, professional experience, life journey, and unique worldview.</p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <Card className="rounded-3xl border-slate-100 shadow-sm p-8 space-y-6">
+                    <h4 className="font-bold text-slate-900 border-b pb-4">Essentials</h4>
+                    <ul className="space-y-4">
+                      {[
+                        "Letters of Recommendation (2)",
+                        "Personal Statement Essays (2)",
+                        "Resume/CV",
+                        "ID/Passport copies (2)"
+                      ].map(item => (
+                        <li key={item} className="flex items-center gap-3 text-slate-600 font-medium text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+
+                  <Card className="rounded-3xl border-slate-100 shadow-sm p-8 space-y-6 bg-slate-900 text-white">
+                    <h4 className="font-bold text-slate-100 border-b border-white/10 pb-4">Personal Statement</h4>
+                    <p className="text-sm text-slate-300 leading-relaxed italic">
+                      "Essay 1: Why ArtWorld? <br />
+                      Essay 2: Significant collaborative experience."
+                    </p>
+                    <p className="text-xs text-secondary font-bold uppercase tracking-widest">
+                      750 Words each
+                    </p>
+                  </Card>
+                </div>
+
+                <div className="p-8 rounded-[32px] bg-secondary/10 border border-secondary/20 flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="space-y-1">
+                    <h4 className="text-lg font-bold text-slate-900">Applications are Ongoing</h4>
+                    <p className="text-slate-500 text-sm font-medium">Web-based submission coming soon. Inquire now.</p>
+                  </div>
+                  <Button className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-8">
+                    Start Application
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="py-24 border-t border-slate-100">
+        <div className="container mx-auto px-4 text-center space-y-8">
+          <h2 className="text-4xl font-headline font-bold">Ready to Launch Your Career?</h2>
+          <div className="flex justify-center gap-4">
+            <Button size="xl" className="rounded-full px-12 h-16 font-extrabold shadow-2xl">
+              Apply to AWI
+            </Button>
+            <Button size="xl" variant="outline" className="rounded-full px-12 h-16 font-extrabold">
+              Contact Admissions
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

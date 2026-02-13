@@ -7,18 +7,76 @@ import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle2, Star, Users, Briefcase, Trophy, Zap, GraduationCap, Heart, Leaf, Book, Film, Mic2 } from 'lucide-react';
+import {
+  CheckCircle2,
+  Star,
+  Users,
+  Briefcase,
+  Trophy,
+  Zap,
+  GraduationCap,
+  Heart,
+  Leaf,
+  Book,
+  Film,
+  Mic2,
+  Tv,
+  Theater,
+  Palette,
+  Shirt,
+  Monitor,
+  Scissors,
+  Sparkles,
+  Coffee,
+  ArrowRight,
+  ChevronRight,
+  Award
+} from 'lucide-react';
 import { MissPinkRibbonModal } from '@/components/modals/miss-pink-ribbon-modal';
+
+const schools = [
+  { name: 'Film School', icon: <Film className="h-6 w-6" />, color: 'bg-blue-500/10 text-blue-600' },
+  { name: 'Media School', icon: <Tv className="h-6 w-6" />, color: 'bg-purple-500/10 text-purple-600' },
+  { name: 'Theatre Arts School', icon: <Theater className="h-6 w-6" />, color: 'bg-red-500/10 text-red-600' },
+  { name: 'Fine Art School', icon: <Palette className="h-6 w-6" />, color: 'bg-orange-500/10 text-orange-600' },
+  { name: 'Fashion School', icon: <Shirt className="h-6 w-6" />, color: 'bg-pink-500/10 text-pink-600' },
+  { name: 'Graphic Design & IT School', icon: <Monitor className="h-6 w-6" />, color: 'bg-indigo-500/10 text-indigo-600' },
+  { name: 'Hair Dressing School', icon: <Scissors className="h-6 w-6" />, color: 'bg-emerald-500/10 text-emerald-600' },
+  { name: 'Beauty School', icon: <Sparkles className="h-6 w-6" />, color: 'bg-yellow-500/10 text-yellow-600' },
+  { name: 'Hospitality, Languages & Tuition', icon: <Coffee className="h-6 w-6" />, color: 'bg-stone-500/10 text-stone-600' },
+  { name: 'Business & Management School', icon: <Briefcase className="h-6 w-6" />, color: 'bg-cyan-500/10 text-cyan-600' },
+];
+
+const modules = [
+  { id: 1, title: 'Introduction to the Institute', desc: 'Understanding philosophy, ethics and program expectations.' },
+  { id: 2, title: 'Fundamentals of Film', desc: 'Film production process, roles, media & society, ratings & audience awareness.' },
+  { id: 3, title: 'Screenwriting & Genres', desc: 'Script-to-screen process, storyboarding, formatting, budgeting & scheduling.' },
+  { id: 4, title: 'Conceptualization', desc: 'Logframes, planning, and pre-production logistics.' },
+  { id: 5, title: 'Production Team Skills', desc: 'Workflow management (Dev vs Prod vs Post) and crew management.' },
+  { id: 6, title: 'Technical Mastery', desc: 'Camera, Lighting, Sound, Editing, Special Effects, and Green Screen.' },
+  { id: 7, title: 'Industry & Careers', desc: 'Career pathways and creative industry structures.' },
+  { id: 8, title: 'Management & Marketing', desc: 'Budgeting, PR, Freelance life, and Film critique.' },
+];
 
 export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   const featuredPrograms = [
     {
+      id: 'academy',
+      name: 'ArtWorld Institute AWI',
+      tag: 'Academy',
+      desc: 'Our premier creative arts training and research institution dedicated to developing professional excellence across the industry.',
+      icon: <GraduationCap className="h-6 w-6 text-white" />,
+      img: 'https://images.unsplash.com/photo-1492691523567-3075677aa163?q=80&w=1200',
+      href: '/academy',
+      color: 'bg-primary/20'
+    },
+    {
       id: 'castreal-agency',
       name: 'CastReal Agency',
-      tag: 'Advocasy',
-      desc: "Discover your potential with Kenya's premier talent and casting hub.We bridge the gap between exceptional artists and world- class productions.",
+      tag: 'Talent',
+      desc: "Discover your potential with Kenya's premier talent and casting hub. We bridge the gap between exceptional artists and world-class productions.",
       icon: <Users className="h-6 w-6 text-white" />,
       img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200',
       href: '/initiatives/castreal-agency',
@@ -56,67 +114,192 @@ export default function Home() {
   return (
     <div className="space-y-0">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:h-[90vh] flex items-center overflow-hidden">
-        <Image
-          src={heroImg?.imageUrl || ''}
-          alt="ArtWorld Institute"
-          fill
-          className="object-cover brightness-[0.3]"
-          priority
-          data-ai-hint={heroImg?.imageHint}
-        />
-        <div className="container mx-auto px-4 relative z-10 text-white py-12">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-950">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10" />
+          <Image
+            src="https://images.unsplash.com/photo-1492691523567-3075677aa163?q=80&w=2000"
+            alt="ArtWorld Academy Hero"
+            fill
+            className="object-cover opacity-60"
+            priority
+          />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-4xl space-y-8">
-            <Badge variant="outline" className="text-primary border-primary border-2 px-4 py-1 font-bold text-sm bg-primary/10">
-              KENYA'S HUB FOR CREATIVE & SOCIAL IMPACT
-            </Badge>
-            <h1 className="font-headline text-4xl sm:text-5xl md:text-8xl font-bold leading-[1.1] md:leading-tight">
-              Where <span className="text-secondary italic">Creativity</span> Connects.
-            </h1>
-            <p className="text-lg md:text-2xl text-ivory/80 font-light max-w-2xl leading-relaxed">
-              ArtWorld Institute is a premier arts training and research institution dedicated to nurturing creativity, advancing cultural knowledge, and shaping future artistic leaders.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="h-16 px-10 text-lg font-bold" asChild>
-                <Link href="/register">Join the Community</Link>
+            <div className="space-y-4 py-3">
+              <Badge className="bg-primary text-white hover:bg-primary/90 px-4 py-1.5 uppercase tracking-widest text-xs border-none animate-in fade-in slide-in-from-left duration-500 py-4">
+                ArtWorld Institute AI
+              </Badge>
+              <h1 className="text-5xl md:text-8xl font-headline font-extrabold text-white leading-[1.1] animate-in fade-in slide-in-from-left duration-700 delay-100">
+                ArtWorld Institute AWI <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-400">
+                  (Incorporating ArtWorld Media Centre)
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-left duration-700 delay-200 font-medium">
+                Developing professional excellence across the Creative Industry value chain.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom duration-700 delay-300">
+              <Button size="xl" className="font-bold rounded-full px-8 h-14 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20" asChild>
+                <Link href="/register">Join Community</Link>
               </Button>
-              <Button size="lg" variant="outline" className="h-16 px-10 text-lg font-bold bg-white/5 border-white/20 hover:bg-white/10" asChild>
-                <Link href="/programs">Our Programs</Link>
+              <Button size="xl" variant="outline" className="font-bold rounded-full px-8 h-14 border-white/20 text-primary hover:bg-white/10 backdrop-blur-sm" asChild>
+                <Link href="/programs">Our Programs <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 border-t border-white/10 animate-in fade-in slide-in-from-bottom duration-700 delay-500 pb-4">
+              {/* Item 1 */}
+              <div>
+                <div className="text-3xl font-bold text-white">6 Months</div>
+                <div className="text-slate-400 text-sm font-semibold uppercase tracking-wider">Short Courses</div>
+              </div>
+              {/* Item 2 */}
+              <div>
+                <div className="text-3xl font-bold text-white">12 Months</div>
+                <div className="text-slate-400 text-sm font-semibold uppercase tracking-wider">Certificates</div>
+              </div>
+              {/* Item 3 */}
+              <div>
+                <div className="text-3xl font-bold text-white">18 Months</div>
+                <div className="text-slate-400 text-sm font-semibold uppercase tracking-wider">Diplomas</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Executive Summary */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs">
+                <span className="w-12 h-px bg-primary opacity-30" />
+                Executive Summary
+              </div>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">
+                Transforming Raw Talent into <br />
+                <span className="text-primary">Industry-Standard Professionals</span>
+              </h2>
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
+                <p>
+                  ArtWorld Institute AI is a premier creative arts training and research institution dedicated to developing professional excellence across the Creative Industry value chain.
+                </p>
+                <div className="bg-white p-8 rounded-[32px] border border-slate-200 shadow-sm space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <Zap className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Intensive & Immersive</h4>
+                      <p className="text-sm">Structured as creative "boot camps" designed for rapid growth and technical mastery.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">Industry Mentorship</h4>
+                      <p className="text-sm">Learn in a studio-based environment mentored by accomplished professionals.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/5 rounded-[40px] -rotate-2" />
+              <Card className="relative overflow-hidden border-none shadow-2xl rounded-[32px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800"
+                  alt="Students collaborating"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-slate-950 to-transparent">
+                  <p className="text-white text-lg font-bold italic">
+                    "Great creative work is made with intention, vision, discipline and responsibility."
+                  </p>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-          <div className="space-y-6">
-            <h2 className="text-4xl font-headline font-bold">Our Integrated Ecosystem</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              ArtWorld Institute (AWI) unifies cultural heritage, modern creativity, and social advocacy. We provide a mobile-first space for members to connect, learn, and grow through diverse programs spanning film, fashion, literature, and leadership.
+      {/* The Schools */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <Badge variant="outline" className="border-primary text-primary font-bold px-4 py-1 uppercase tracking-widest text-xs">
+              Specializations
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold">Our Ten Specialist Schools</h2>
+            <p className="text-slate-500 text-lg font-medium leading-relaxed">
+              Tailored learning pathways designed to cover every aspect of the creative and professional ecosystem.
             </p>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                <Users className="h-8 w-8 text-primary mb-2" />
-                <h4 className="font-bold">Community</h4>
-                <p className="text-sm text-muted-foreground">Network with peers and mentors across programs.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {schools.map((school) => (
+              <div key={school.name} className="group p-8 rounded-[32px] border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center space-y-6">
+                <div className={`w-16 h-16 rounded-2xl ${school.color} flex items-center justify-center mx-auto group-hover:scale-110 transition-transform`}>
+                  {school.icon}
+                </div>
+                <h3 className="font-bold text-slate-900 leading-tight group-hover:text-primary transition-colors">{school.name}</h3>
               </div>
-              <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
-                <GraduationCap className="h-8 w-8 text-primary mb-2" />
-                <h4 className="font-bold">Learning</h4>
-                <p className="text-sm text-muted-foreground">Access recorded sessions and certifications.</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Course Structure - Modules */}
+      <section className="py-24 bg-slate-950 text-white overflow-hidden">
+        <div className="container mx-auto px-4 relative">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">
+              <Badge className="bg-secondary text-primary font-extrabold px-4 py-1.5 uppercase tracking-widest text-[10px] border-none">
+                Master Training Structure
+              </Badge>
+              <h2 className="text-4xl md:text-6xl font-headline font-bold leading-tight">
+                8 Progressive <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-orange-400 italic">Modules</span>
+              </h2>
+              <p className="text-slate-400 text-lg leading-relaxed font-medium">
+                Our curriculum is built to take applicants from foundational theory to technical mastery and professional readiness.
+              </p>
+
+              <div className="space-y-4 pt-8">
+                {["Intention-driven design", "Vision-focused execution", "Professional discipline", "Social responsibility"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-secondary" />
+                    <span className="text-slate-300 font-bold text-sm uppercase tracking-wide">{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-          <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-              alt="AWI Community"
-              fill
-              className="object-cover"
-              data-ai-hint="community learning"
-            />
+
+            <div className="lg:col-span-7 grid gap-4">
+              {modules.map((mod) => (
+                <div key={mod.id} className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex gap-6 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-secondary font-black text-xl shrink-0">
+                    {mod.id}
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-bold font-headline text-white">{mod.title}</h4>
+                    <p className="text-slate-400 font-medium leading-relaxed">{mod.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -170,33 +353,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Impact & Call to Action */}
-      <section className="py-16 md:py-24 bg-secondary text-white text-center">
-        <div className="container mx-auto px-4 max-w-3xl space-y-8 md:space-y-10">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold">Join the Movement</h2>
-          <p className="text-xl text-ivory/70 font-light">
-            Become a part of Kenya's most dynamic creative ecosystem. Whether you are an aspiring artist, a leader, or a community builder, AWI is your home.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 py-8">
-            <div>
-              <div className="text-3xl md:text-4xl font-headline font-bold text-primary">5k+</div>
-              <div className="text-[10px] md:text-sm uppercase tracking-widest font-medium opacity-60">Members</div>
+      {/* Why Study Here & Industry Connections */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5 space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-headline font-bold">Why Study at AWI?</h2>
+                <div className="grid sm:grid-cols-2 gap-4 pt-6">
+                  {[
+                    "Small class sizes",
+                    "Hands-on studio training",
+                    "Industry Mentorship",
+                    "Internship placement",
+                    "Job placement pipeline",
+                    "Industry partnerships"
+                  ].map((benefit) => (
+                    <div key={benefit} className="flex items-center gap-2 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary/30 transition-colors">
+                      <Star className="h-4 w-4 text-primary fill-primary" />
+                      <span className="font-bold text-slate-700 text-sm whitespace-nowrap">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-8 rounded-[40px] bg-primary text-white space-y-6 shadow-2xl shadow-primary/20">
+                <Award className="h-12 w-12 text-secondary" />
+                <h3 className="text-2xl font-bold font-headline">Go Further</h3>
+                <p className="text-white/80 font-medium leading-relaxed">
+                  Through ArtWorld Media Centre and Media Kreative Films, ArtWorld Institute operates as a training-to-employment ecosystem.
+                </p>
+                <div className="flex gap-4 pt-4">
+                  <div className="px-5 py-2 rounded-full border border-white/20 bg-white/10 text-xs font-bold uppercase tracking-wider">Media Kreative</div>
+                  <div className="px-5 py-2 rounded-full border border-white/20 bg-white/10 text-xs font-bold uppercase tracking-wider">AWI Media Centre</div>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-headline font-bold text-primary">200+</div>
-              <div className="text-[10px] md:text-sm uppercase tracking-widest font-medium opacity-60">Workshops</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-headline font-bold text-primary">15+</div>
-              <div className="text-[10px] md:text-sm uppercase tracking-widest font-medium opacity-60">Annual Events</div>
+
+            <div className="lg:col-span-7 pl-0 lg:pl-12">
+              <div className="grid gap-8">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-headline font-bold">Admissions & Requirements</h3>
+                  <p className="text-slate-500 font-medium">Admission is based on academic background, professional experience, life journey, and unique worldview.</p>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <Card className="rounded-3xl border-slate-100 shadow-sm p-8 space-y-6">
+                    <h4 className="font-bold text-slate-900 border-b pb-4">Essentials</h4>
+                    <ul className="space-y-4">
+                      {[
+                        "Letters of Recommendation (2)",
+                        "Personal Statement Essays (2)",
+                        "Resume/CV",
+                        "ID/Passport copies (2)"
+                      ].map(item => (
+                        <li key={item} className="flex items-center gap-3 text-slate-600 font-medium text-sm">
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+
+                  <Card className="rounded-3xl border-slate-100 shadow-sm p-8 space-y-6 bg-slate-900 text-white">
+                    <h4 className="font-bold text-slate-100 border-b border-white/10 pb-4">Personal Statement</h4>
+                    <p className="text-sm text-slate-300 leading-relaxed italic">
+                      "Essay 1: Why ArtWorld? <br />
+                      Essay 2: Significant collaborative experience."
+                    </p>
+                    <p className="text-xs text-white/80 font-bold uppercase tracking-widest">
+                      750 Words each
+                    </p>
+                  </Card>
+                </div>
+
+                <div className="p-8 rounded-[32px] bg-secondary/10 border border-secondary/20 flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="space-y-1">
+                    <h4 className="text-lg font-bold text-slate-900">Applications are Ongoing</h4>
+                    <p className="text-slate-500 text-sm font-medium">Web-based submission coming soon. Inquire now.</p>
+                  </div>
+                  <Button className="bg-primary hover:bg-primary/90 text-white font-bold rounded-full px-8">
+                    Start Application
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="h-16 px-12 text-lg font-bold" asChild>
-              <Link href="/register">Start Free Membership</Link>
+        </div>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="py-24 border-t border-slate-100">
+        <div className="container mx-auto px-4 text-center space-y-8">
+          <h2 className="text-4xl font-headline font-bold">Ready to Launch Your Career?</h2>
+          <div className="flex justify-center gap-4">
+            <Button size="xl" className="rounded-full px-12 h-16 font-extrabold shadow-2xl">
+              Apply to AWI
             </Button>
-            <Button size="lg" variant="outline" className="h-16 px-12 text-lg font-bold hover:text-white text-primary border-white/20" asChild>
-              <Link href="/community">Visit Community Hub</Link>
+            <Button size="xl" variant="outline" className="rounded-full px-12 h-16 font-extrabold">
+              Contact Admissions
             </Button>
           </div>
         </div>

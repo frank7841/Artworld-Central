@@ -5,10 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, Users } from 'lucide-react';
+import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, Users, GraduationCap } from 'lucide-react';
 import { ExploreMore } from '@/components/layout/ExploreMore';
 
 const allPrograms = [
+  { id: 'academy', name: 'ArtWorld Institute AWI', tag: 'Academic', icon: <GraduationCap /> },
   { id: 'miss-pink-ribbon', name: 'MISS PINK RIBBON Kenya', tag: 'Advocacy', icon: <Heart /> },
   { id: 'kikaoo-awards', name: 'KIKAOO Awards incorporating Nairobi Film Festival', tag: 'Media', icon: <Film /> },
   { id: 'castreal-agency', name: 'CastReal Agency', tag: 'Talent', icon: <Users /> },
@@ -19,7 +20,6 @@ const allPrograms = [
   { id: 'book-week', name: 'KIKAOO NATIONAL BOOK WEEK', tag: 'Literature', icon: <Book /> },
   { id: 'transport-awards', name: 'Kenya NATIONAL TRANSPORT and Safety AWARDS', tag: 'Community', icon: <Truck /> },
   { id: 'fashion-runway', name: 'AWI Fashion Runway', tag: 'Fashion', icon: <Briefcase /> },
-
 ];
 
 export default function ProgramsPage() {
@@ -43,7 +43,7 @@ export default function ProgramsPage() {
               <CardContent className="space-y-4">
                 <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">{program.name}</CardTitle>
                 <Button variant="outline" size="sm" className="w-full font-bold" asChild>
-                  <Link href={`initiatives/${program.id}`}>View Details</Link>
+                  <Link href={program.id === 'academy' ? '/academy' : `initiatives/${program.id}`}>View Details</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -57,11 +57,11 @@ export default function ProgramsPage() {
         description="Explore our high-impact projects driving social change and creative excellence across Kenya."
         items={[
           {
-            id: 'castreal-agency',
-            name: 'CastReal Agency',
-            desc: "Discover your potential with Kenya's premier talent and casting hub.We bridge the gap between exceptional artists and world- class productions.",
-            icon: <Users className="h-6 w-6 text-primary" />,
-            href: '/initiatives/castreal-agency',
+            id: 'nifa',
+            name: 'Nairobi Festival of Arts (NFA)',
+            desc: 'Multidisciplinary cultural festival celebrating creativity and cultural diversity.',
+            icon: <Zap className="h-6 w-6 text-primary" />,
+            href: '/initiatives/nifa',
             color: 'bg-blue-50'
           },
           {
@@ -77,7 +77,7 @@ export default function ProgramsPage() {
             name: 'MISS PINK RIBBON Kenya',
             desc: "Promoting breast cancer awareness and women's health through elegance.",
             icon: <Heart className="h-6 w-6 text-pink-600" />,
-            href: 'initiatives/miss-pink-ribbon',
+            href: '/initiatives/miss-pink-ribbon',
             color: 'bg-pink-50'
           },
           {
