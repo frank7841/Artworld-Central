@@ -55,9 +55,9 @@ export function MissPinkRibbonModal() {
                             </Link>
                         </Button>
                         <div className="grid grid-cols-2 gap-3">
-                            <Button variant="outline" className="w-full font-semibold border-primary/20 hover:bg-primary/5 text-primary" asChild>
+                            <Button variant="outline" className="p-1 w-full font-semibold border-primary/20 hover:bg-primary/5 text-primary " asChild>
                                 <Link href="#">
-                                    <Heart className="mr-2 h-4 w-4" /> Become a Sponsor
+                                    <Heart className="mr-2 h-4 w-4 shrink-0 md:block hidden" /> Become a Sponsor
                                 </Link>
                             </Button>
                             <Button variant="ghost" className="w-full text-muted-foreground" onClick={() => setIsOpen(false)}>

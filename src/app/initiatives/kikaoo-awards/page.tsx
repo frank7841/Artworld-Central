@@ -26,7 +26,7 @@ export default function KikaooAwardsPage() {
     return (
         <div className="min-h-screen bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[80vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background z-10" />
                     {/* Placeholder for Hero Image - would replace with actual image */}
@@ -48,12 +48,12 @@ export default function KikaooAwardsPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-                        <div className="flex items-center gap-2 text-white/80 bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm border border-white/10">
-                            <Calendar className="h-5 w-5 text-amber-500" />
+                        <div className="flex items-center gap-2 text-white/80 bg-black/30 px-6 py-3 rounded-full backdrop-blur-sm border border-primary/10">
+                            <Calendar className="h-5 w-5 text-primary" />
                             <span>Nov – Dec 2026</span>
                         </div>
-                        <div className="flex items-center gap-2 text-white/80 bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm border border-white/10">
-                            <MapPin className="h-5 w-5 text-amber-500" />
+                        <div className="flex items-center gap-2 text-white/80 bg-black/30 px-6 py-3 rounded-full backdrop-blur-sm border border-primary/10">
+                            <MapPin className="h-5 w-5 text-primary" />
                             <span>National Museums & Bomas of Kenya</span>
                         </div>
                     </div>

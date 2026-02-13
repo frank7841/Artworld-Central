@@ -26,7 +26,7 @@ export default function CastRealPage() {
     return (
         <div className="min-h-screen bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[80vh] md:h-[100vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200"
@@ -301,7 +301,7 @@ export default function CastRealPage() {
                     <div className="flex flex-col sm:flex-row justify-center gap-6">
                         <Button size="lg" className="h-16 px-12 text-lg font-bold rounded-full group shadow-xl shadow-primary/20" asChild>
                             <Link href="https://forms.google.com" target="_blank">
-                                Open Registration Form <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                Open Registration Form <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform whitespace-nowrap md:whitespace-normal" />
                             </Link>
                         </Button>
                     </div>
