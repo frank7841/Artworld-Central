@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, Users, GraduationCap } from 'lucide-react';
+import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, Users, GraduationCap, TrendingUp } from 'lucide-react';
 import { ExploreMore } from '@/components/layout/ExploreMore';
 
 const allPrograms = [
@@ -18,8 +18,9 @@ const allPrograms = [
   { id: 'nifa', name: 'Nairobi Festival of Arts NFA', tag: 'Arts', icon: <Zap /> },
   { id: 'pop-life', name: 'NAIROBI POP LIFE', tag: 'Culture', icon: <Star /> },
   { id: 'book-week', name: 'KIKAOO NATIONAL BOOK WEEK', tag: 'Literature', icon: <Book /> },
-  { id: 'transport-awards', name: 'Kenya NATIONAL TRANSPORT and Safety AWARDS', tag: 'Community', icon: <Truck /> },
+  { id: 'kntea', name: 'Kenya National Transport Excellence Awards (KNTEA)', tag: 'Mobility', icon: <Truck /> },
   { id: 'fashion-runway', name: 'AWI Fashion Runway', tag: 'Fashion', icon: <Briefcase /> },
+  { id: 'awi-welfare-club', name: 'AWI Welfare Savings & Investment Club', tag: 'Finance', icon: <TrendingUp /> },
 ];
 
 export default function ProgramsPage() {

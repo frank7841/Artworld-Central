@@ -2,7 +2,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
-import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, ArrowRight, Users, Mic, GraduationCap, Clapperboard, ShoppingBag, HandHeart, Library, Shield, Dumbbell, PiggyBank, Newspaper } from 'lucide-react';
+import { Briefcase, Heart, Star, Zap, Book, Film, Truck, Palette, Trophy, Leaf, Clock, Sparkles, ArrowRight, Users, Mic, GraduationCap, Clapperboard, ShoppingBag, HandHeart, Library, Shield, Dumbbell, PiggyBank, Newspaper, TrendingUp } from 'lucide-react';
 import { ExploreMore } from '@/components/layout/ExploreMore';
 
 export default function InitiativesPage() {
@@ -105,11 +105,11 @@ export default function InitiativesPage() {
             color: 'bg-amber-50'
         },
         {
-            id: 'transport-safety-awards',
-            name: 'National Transport & Safety Awards',
-            desc: 'The Kenya National Transport and Safety Awards recognize excellence, innovation, and responsibility in transport, road safety, and mobility across the country.',
-            icon: <Shield className="h-6 w-6 text-slate-700" />,
-            href: '/initiatives/transport-safety-awards',
+            id: 'kntea',
+            name: 'Kenya National Transport Excellence Awards (KNTEA)',
+            desc: 'Driving safety, inclusivity, and sustainable mobility across compliance, operational excellence, and innovation in Kenya’s transport ecosystem.',
+            icon: <Truck className="h-6 w-6 text-slate-700" />,
+            href: '/initiatives/kntea',
             color: 'bg-slate-50'
         },
         {
@@ -122,9 +122,9 @@ export default function InitiativesPage() {
         },
         {
             id: 'awi-welfare-club',
-            name: 'AWI Welfare Investment Club',
-            desc: 'Securing the financial future of the creative community through collective investment.',
-            icon: <PiggyBank className="h-6 w-6 text-emerald-600" />,
+            name: 'AWI Welfare Savings & Investment Club',
+            desc: 'A members-based financial empowerment initiative promoting a culture of saving, collective investment, and social welfare.',
+            icon: <TrendingUp className="h-6 w-6 text-emerald-600" />,
             href: '/initiatives/awi-welfare-club',
             color: 'bg-emerald-50'
         },

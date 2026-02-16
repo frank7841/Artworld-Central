@@ -30,7 +30,9 @@ import {
   Coffee,
   ArrowRight,
   ChevronRight,
-  Award
+  Award,
+  Truck,
+  TrendingUp
 } from 'lucide-react';
 import { MissPinkRibbonModal } from '@/components/modals/miss-pink-ribbon-modal';
 
@@ -62,21 +64,21 @@ export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   const featuredPrograms = [
-    {
-      id: 'academy',
-      name: 'ArtWorld Institute AWI',
-      tag: 'Academy',
-      desc: 'Our premier creative arts training and research institution dedicated to developing professional excellence across the industry.',
-      icon: <GraduationCap className="h-6 w-6 text-white" />,
-      img: 'https://images.unsplash.com/photo-1492691523567-3075677aa163?q=80&w=1200',
-      href: '/academy',
-      color: 'bg-primary/20'
-    },
+    // {
+    //   id: 'academy',
+    //   name: 'ArtWorld Institute AWI',
+    //   tag: 'Academy',
+    //   desc: 'Our premier creative arts training and research institution dedicated to developing professional excellence across the industry.',
+    //   icon: <GraduationCap className="h-6 w-6 text-white" />,
+    //   img: 'https://images.unsplash.com/photo-1492691523567-3075677aa163?q=80&w=1200',
+    //   href: '/academy',
+    //   color: 'bg-primary/20'
+    // },
     {
       id: 'castreal-agency',
       name: 'CastReal Agency',
       tag: 'Talent',
-      desc: "Discover your potential with Kenya's premier talent and casting hub. We bridge the gap between exceptional artists and world-class productions.",
+      desc: "Professional talent and casting agency connecting models, actors, and performers with opportunities in film, fashion, advertising, and creative productions.",
       icon: <Users className="h-6 w-6 text-white" />,
       img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200',
       href: '/initiatives/castreal-agency',
@@ -95,7 +97,7 @@ export default function Home() {
       id: 'heal-future',
       name: 'Heal the Future Climate Action Program – Schools Program',
       tag: 'Climate Action',
-      desc: 'School-based environmental stewardship, regenerative agriculture, and youth leadership initiative.',
+      desc: 'Arts-led climate action initiative that empowers schools, youth, and communities to address environmental challenges through creative education, awareness campaigns, and sustainable practices',
       icon: <Leaf className="h-5 w-5 text-white" />,
       img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800',
       href: '/initiatives/heal-future'
@@ -104,10 +106,28 @@ export default function Home() {
       id: 'pink-ribbon',
       name: 'MISS PINK RIBBON Kenya',
       tag: 'Advocacy',
-      desc: 'Promoting breast cancer awareness and women’s health through elegance.',
+      desc: 'Purpose-driven beauty pageant that combines elegance with advocacy, promoting breast cancer awareness, women’s health education, and community empowerment.',
       icon: <Heart className="h-5 w-5 text-white" />,
       img: PlaceHolderImages.find(i => i.id === 'program-pink-ribbon')?.imageUrl || '',
       href: '/initiatives/miss-pink-ribbon'
+    },
+    {
+      id: 'kntea',
+      name: 'KNTEA Awards',
+      tag: 'Mobility',
+      desc: 'Driving safety, inclusivity, and sustainable mobility across compliance, operational excellence, and innovation in Kenya’s transport ecosystem.',
+      icon: <Truck className="h-5 w-5 text-white" />,
+      img: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800',
+      href: '/initiatives/kntea'
+    },
+    {
+      id: 'awi-welfare-club',
+      name: 'AWI Welfare Club',
+      tag: 'Finance',
+      desc: 'Building financial resilience through collective savings, welfare support, and smart investment opportunities for the creative community.',
+      icon: <TrendingUp className="h-5 w-5 text-white" />,
+      img: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=800',
+      href: '/initiatives/awi-welfare-club'
     }
   ];
 
@@ -189,7 +209,7 @@ export default function Home() {
               </h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
                 <p>
-                  ArtWorld Institute AI is a premier creative arts training and research institution dedicated to developing professional excellence across the Creative Industry value chain.
+                  ArtWorld Institute is a premier arts training and research institution dedicated to nurturing creativity, advancing cultural knowledge, and shaping future artistic leaders through education, innovation, and community engagement.
                 </p>
                 <div className="bg-white p-8 rounded-[32px] border border-slate-200 shadow-sm space-y-4">
                   <div className="flex items-start gap-4">
@@ -445,11 +465,11 @@ export default function Home() {
       <section className="py-24 border-t border-slate-100">
         <div className="container mx-auto px-4 text-center space-y-8">
           <h2 className="text-4xl font-headline font-bold">Ready to Launch Your Career?</h2>
-          <div className="flex justify-center gap-4">
-            <Button size="xl" className="rounded-full px-12 h-16 font-extrabold shadow-2xl">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button size="xl" className="w-full sm:w-auto rounded-full px-12 h-16 font-extrabold shadow-2xl">
               Apply to AWI
             </Button>
-            <Button size="xl" variant="outline" className="rounded-full px-12 h-16 font-extrabold">
+            <Button size="xl" variant="outline" className="w-full sm:w-auto rounded-full px-12 h-16 font-extrabold">
               Contact Admissions
             </Button>
           </div>
