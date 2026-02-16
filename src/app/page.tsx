@@ -64,16 +64,7 @@ export default function Home() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   const featuredPrograms = [
-    // {
-    //   id: 'academy',
-    //   name: 'ArtWorld Institute AWI',
-    //   tag: 'Academy',
-    //   desc: 'Our premier creative arts training and research institution dedicated to developing professional excellence across the industry.',
-    //   icon: <GraduationCap className="h-6 w-6 text-white" />,
-    //   img: 'https://images.unsplash.com/photo-1492691523567-3075677aa163?q=80&w=1200',
-    //   href: '/academy',
-    //   color: 'bg-primary/20'
-    // },
+
     {
       id: 'castreal-agency',
       name: 'CastReal Agency',
